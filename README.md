@@ -15,6 +15,7 @@ Main commands
 
 Camera
 -zoom <number>, for example -zoom 2500
+
 Change the nickname
 -name <name>, for example -name Empire
 
@@ -32,6 +33,7 @@ Russian original
 
 Камера (отдалить/приблизить)
 -zoom <число>, например -zoom 2500
+
 Изменить игровой никнейм
 -name <имя>, например -name Империя
 
