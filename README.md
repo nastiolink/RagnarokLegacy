@@ -6,6 +6,8 @@ The mod adds many new factions to the game, makes changes to the balance, visual
 Each added faction has AI. The add-on is powered by the MM Engine. MME allows you to create our unrivaled client game. Compatible game version: 1.26a.
 You can play online via LAN using a LAN emulator. Only russian language support.
 
+Official site: https://sites.google.com/view/wcragnaroklegacy/Home
+
 Download: https://github.com/nastiolink/RagnarokLegacy/releases
 
 
@@ -23,6 +25,8 @@ Russian original
 Дополнение добавляет в игру множество новых фракций. Проект работает на движке MM Еngine. 
 Модификация включает в себя добавление новых рас, внесение правок в баланс, визуальную часть а также добавление нового контента в режим сражений.
 Играть онлайн можно через локальную сеть, используя эмулятор локальной сети. Проект поддерживается только на русском языке.
+
+Официальный сайт: https://sites.google.com/view/wcragnaroklegacy/Home
 
 Основные команды
 
@@ -50,7 +54,8 @@ Russian original
 Переустновите игру или скачайте нашу сборку.
 Убедитесь в актуальности версии мода.
 Если нашли новый баг сообщите об этом разработчику
-Telegram: @ragnaroklegacy
+ВК: https://vk.com/war3ragnarok
+Telegram: https://t.me/ragnaroklegacy
 
 Как часто выходят обновления?
 
