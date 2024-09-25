@@ -8,7 +8,7 @@ You can play online via LAN using a LAN emulator. Only russian language support.
 
 Official site: https://sites.google.com/view/wcragnaroklegacy/Home
 
-Download from repo: https://github.com/nastiolink/RagnarokLegacy/releases
+Download from GitHub: https://github.com/nastiolink/RagnarokLegacy/releases
 
 
 Main commands
