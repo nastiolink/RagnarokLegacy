@@ -78,3 +78,25 @@ Telegram: https://t.me/ragnaroklegacy
 Как часто выходят обновления?
 
 Этот проект некоммерческий и на постоянной основе работает только один человек. Соответственно всегда по-разному.
+
+Скриншоты
+
+![WC3ScrnShot_121323_163344_21](https://github.com/user-attachments/assets/da8b3d8d-e78c-47f1-8786-fb3eeb330aad)
+![WC3ScrnShot_121323_162743_15](https://github.com/user-attachments/assets/b1035acf-cbfc-43b5-9023-a1046d654174)
+![WC3ScrnShot_121123_192832_27](https://github.com/user-attachments/assets/32408101-30f8-4c78-a4bf-a3e3cde6abe4)
+![WC3ScrnShot_121023_190204_17](https://github.com/user-attachments/assets/53a68683-1c48-47c1-b697-72caa8867ce9)
+![WC3ScrnShot_121023_172804_05](https://github.com/user-attachments/assets/979c01ac-e128-49b8-8b27-8978ba44c9bc)
+![WC3ScrnShot_012525_155553_12](https://github.com/user-attachments/assets/3ce664c2-44ad-40d4-a2e0-0f208fddcc44)
+![WC3ScrnShot_012725_144947_19](https://github.com/user-attachments/assets/d66244f0-3314-49c0-b2d0-359dc3946b15)
+![WC3ScrnShot_121023_174040_08](https://github.com/user-attachments/assets/1d96f455-29b2-4a5c-85eb-0470f667a68f)
+![WC3ScrnShot_112523_154135_03](https://github.com/user-attachments/assets/d7065608-3f04-44ef-8993-494fa648080b)
+![WC3ScrnShot_112523_154113_02](https://github.com/user-attachments/assets/2ca7160b-abd5-4ece-a18d-4dbb3f8342c2)
+![WC3ScrnShot_112523_154054_01](https://github.com/user-attachments/assets/c29baf84-3a21-4b60-839a-b1787f970633)
+
+
+
+
+
+
+
+
