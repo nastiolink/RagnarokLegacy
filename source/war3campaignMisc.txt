@@ -1,0 +1,38 @@
+﻿[Misc]
+DrainUsesEtheralBonus=1
+IllusionsBestowAuras=1
+PolymorphedUnitsBestowAuras=1
+HeroReviveManaFactor=1.0
+NeedHeroXP=200,500,900,1400,2000,2600,3200,4400,5400,6000,8200,9000,10400,11900,13500,15200,17000,18900
+EtherealHealBonus=1.4
+MaxGuardDistance=600.0
+GuardReturnTime=3.0
+MaxUnitSpeed=522.0
+MinUnitSpeed=100.0
+DisplayBuildingStatus=1
+PawnItemRange=150.0
+HeroAwakenLifeFactor=1.0
+HeroAwakenManaFactor=1.0
+UpkeepUsage=10000,10000,10000,10000,10000,10000,10000,10000
+AttackNotifyRange=1000.0
+FrostMoveSpeedDecrease=0.3
+FoodCeiling=200
+
+[TALT]
+DependencyOr=o62K,o626,h63M,h627,o618,h624,h625,o60R,h623,n61R,h60E,o608,halt,oalt,eate,uaod,u60M,u613,e60I
+
+[HERO]
+DependencyOr=H63A,H639,H63R,H63S,H63T,H63Q,H64K,O611,O62G,H60Y,O612,E60A,E60B,N60X,H634,U60B,H635,H636,H637,H638,O61S,O61U,O61V,O61W,O61Q,O61R,O61T,N61D,N61E,H63E,H63F,H63G,H601,H602,H603,H600,Hamg,Hblm,Hmkg,Hpal,Obla,Ofar,Oshd,Otch,Emoo,Ekee,Edem,Ewar,Udea,Ulic,Udre,Ucrl,Nalc,Nngs,Ntin,Npbm,Nbst,Nfir,Nplh,Nbrn,H641,O643,E60Y,H64C,N63F,O63Z,U603,H64D,E60Z,O644,U604,U605,U60G,N63G,H64E,U60S,N63H,H64P,N638,H64Q,H64S,E611,H64U,N63W,N63Z,N632,H643,H64X,E615,U61J,E616,E617,U61I,H64Y,N64S,O64H,E61D,N655,O63E,U61L
+
+[TWN1]
+DependencyOr=o62H,h61P,h63H,o623,o610,h61O,h61R,o605,h61Q,o60O,n61T,h60S,htow,ogre,etol,unpl,u60H,u60W,e60P
+Name=Центр поселения I класса
+
+[TWN2]
+DependencyOr=o62I,h63K,o624,o614,h61S,h61U,o60P,h61V,h61T,o606,n61S,h60M,hkee,ostr,etoa,unp1,u60I,u60X,e60Q
+Name=Центр поселения II класса
+
+[TWN3]
+DependencyOr=o62J,h63L,o625,o615,h61W,h61Z,h61X,h61Y,o607,o60Q,n61X,h60I,hcas,ofrt,etoe,unp2,u60J,u60Y,e60R
+Name=Центр поселения III класса
+
