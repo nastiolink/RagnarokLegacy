@@ -1,6 +1,8 @@
 # RagnarokLegacy
 ![ragnarek_logo_site](https://github.com/user-attachments/assets/bec65806-f014-4221-ae91-f6540f31c7a1)
 
+English
+
 Unofficial open-source game modification for Warcraft III The Frozen Throne. 
 The mod adds many new factions to the game, makes changes to the balance, visuals and adds new content to the battle mode. 
 Each added faction has AI. The add-on is powered by the MM Engine:
@@ -21,8 +23,9 @@ Camera
 Change the nickname
 -name <name>, for example -name Empire
 
+-----
 
-Russian original
+Russian
 
 Неофициальное масштабное дополнение для Warcraft III The Frozen Throne. 
 Дополнение добавляет в игру множество новых фракций. Проект работает на движке MM Еngine:
