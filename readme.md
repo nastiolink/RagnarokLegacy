@@ -54,7 +54,8 @@ https://github.com/Ev3nt/MM-Engine
 Можно ли играть по сети?
 
 Да, используйте Radmin VPN, заходите через локальную сеть.
-Наша сеть
+
+Наша сеть Radmin VPN
 Название: WC3 Ragnarok Legacy
 Пароль: darksidecompany
 
