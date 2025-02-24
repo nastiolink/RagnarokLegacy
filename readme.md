@@ -18,9 +18,11 @@ Download from GitHub: https://github.com/nastiolink/RagnarokLegacy/releases
 Main commands
 
 Camera
+
 -zoom <number>, for example -zoom 2500
 
 Change the nickname
+
 -name <name>, for example -name Empire
 
 -----
@@ -38,9 +40,11 @@ https://github.com/Ev3nt/MM-Engine
 Основные команды
 
 Камера (отдалить/приблизить)
+
 -zoom <число>, например -zoom 2500
 
 Изменить игровой никнейм
+
 -name <имя>, например -name Империя
 
 -----
@@ -56,7 +60,9 @@ https://github.com/Ev3nt/MM-Engine
 Да, используйте Radmin VPN, заходите через локальную сеть.
 
 Наша сеть Radmin VPN
+
 Название: WC3 Ragnarok Legacy
+
 Пароль: darksidecompany
 
 У меня баги, что делать?
