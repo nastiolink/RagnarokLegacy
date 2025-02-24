@@ -3,7 +3,9 @@
 
 Unofficial open-source game modification for Warcraft III The Frozen Throne. 
 The mod adds many new factions to the game, makes changes to the balance, visuals and adds new content to the battle mode. 
-Each added faction has AI. The add-on is powered by the MM Engine. MME allows you to create our unrivaled client game. Compatible game version: 1.26a.
+Each added faction has AI. The add-on is powered by the MM Engine:
+https://github.com/Ev3nt/MM-Engine
+MME allows you to create our unrivaled client game. Compatible game version: 1.26a.
 You can play online via LAN using a LAN emulator. Only russian language support.
 
 Official site: https://sites.google.com/view/wcragnaroklegacy/Home
@@ -23,7 +25,8 @@ Change the nickname
 Russian original
 
 Неофициальное масштабное дополнение для Warcraft III The Frozen Throne. 
-Дополнение добавляет в игру множество новых фракций. Проект работает на движке MM Еngine. 
+Дополнение добавляет в игру множество новых фракций. Проект работает на движке MM Еngine:
+https://github.com/Ev3nt/MM-Engine
 Модификация включает в себя добавление новых рас, внесение правок в баланс, визуальную часть а также добавление нового контента в режим сражений.
 Играть онлайн можно через локальную сеть, используя эмулятор локальной сети. Проект поддерживается только на русском языке.
 
@@ -36,6 +39,8 @@ Russian original
 
 Изменить игровой никнейм
 -name <имя>, например -name Империя
+
+-----
 
 Частые вопросы
 
