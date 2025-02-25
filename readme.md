@@ -14,6 +14,11 @@ Official site: https://sites.google.com/view/wcragnaroklegacy/Home
 
 Download from GitHub: https://github.com/nastiolink/RagnarokLegacy/releases
 
+Support author:
+
+Donationalerts: https://www.donationalerts.com/r/nastiolink
+
+Ko-Fi: https://ko-fi.com/nastiolink
 
 Main commands
 
@@ -36,6 +41,14 @@ https://github.com/Ev3nt/MM-Engine
 Играть онлайн можно через локальную сеть, используя эмулятор локальной сети. Проект поддерживается только на русском языке.
 
 Официальный сайт: https://sites.google.com/view/wcragnaroklegacy/Home
+
+Скачать релиз на GitHub: https://github.com/nastiolink/RagnarokLegacy/releases
+
+Поддержать автора:
+
+Donationalerts: https://www.donationalerts.com/r/nastiolink
+
+Ko-Fi: https://ko-fi.com/nastiolink
 
 Основные команды
 
