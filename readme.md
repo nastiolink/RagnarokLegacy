@@ -86,6 +86,7 @@ Ko-Fi: https://ko-fi.com/nastiolink
 Если нашли новый баг - сообщите об этом разработчику.
 
 ВК: https://vk.com/war3ragnarok
+
 Telegram: https://t.me/ragnaroklegacy
 
 Как часто выходят обновления?
