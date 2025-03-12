@@ -30,6 +30,16 @@ Change the nickname
 
 -name <name>, for example -name Empire
 
+How do I install a mod?
+
+Windows
+
+Extract the archive to the game folder and use StartRagnarok.bat to run it or create a shortcut MM Engine.exe and in the properties of the shortcut add “ -mod Ragnarok Legacy” without quotes. If you are not a skill user, download the installer of the repack version of the project. If the version in the installer is outdated, you can install the current version of the mod with file replacement in the standard way by unzipping the archive (for example with 7zip).
+
+Linux 
+
+Extract to the game folder, open a terminal in this folder, enter the command wine 'MM Engine.exe' -mod Ragnarok Legacy. Start with this command every time. The package "wine" is required to run the game.
+
 -----
 
 Russian
@@ -60,14 +70,20 @@ Ko-Fi: https://ko-fi.com/nastiolink
 
 -name <имя>, например -name Империя
 
+Как установить мод?
+
+Windows
+
+Распаковать архив в корневую папку игры и использовать для запуска StartRagnarok.bat или создать ярлык MM Engine.exe и в свойствах ярлыка дописать в свойствах объекта " -mod Ragnarok Legacy" без кавычек. Если вы не опытный пользователь, скачайте установщик repack версии проекта. Если версия в установщике устарела, можно установить актуальную версию мода с заменой файлов стандартным способом через распаковку архива.
+
+Linux: 
+
+Распаковать в корневую папку игры, открыть терминал в этой папке, ввести команду wine 'MM Engine.exe' -mod Ragnarok Legacy. Каждый раз запускать через эту команду. Для запуска необходим пакет wine.
+
 -----
 
 Частые вопросы
 
-Как установить мод?
-
-Распаковать архив в папку с игрой и запустить StartRagnarok.bat либо создать ярлык MM Engine.exe и в свойствах ярлыка дописать в пункте объект " -mod Ragnarok Legacy" без кавычек, после этого вы сможете нацепить на него фирменную иконку проекта.
-Примечание: Если вы не опытный пользователь, то лучше установить сборку проекта.
 Можно ли играть по сети?
 
 Да, используйте Radmin VPN, заходите через локальную сеть.
