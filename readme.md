@@ -1,5 +1,6 @@
 # RagnarokLegacy
-![ragnarek_logo_site](https://github.com/user-attachments/assets/bec65806-f014-4221-ae91-f6540f31c7a1)
+![Warcraft_III_Ragnarok_Legacy_logo_kopia](https://github.com/user-attachments/assets/e780bd5b-ec7d-43dd-81fe-95e785eafcb7)
+
 
 English
 
