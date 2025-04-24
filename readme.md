@@ -1,5 +1,5 @@
 # RagnarokLegacy
-![ragnarok_legacy](https://github.com/user-attachments/assets/36ca9901-1da5-402a-8bc9-4e58018dcef5)
+![ragnarok-legacy-2](https://github.com/user-attachments/assets/ae4ae4b8-90df-43b8-8424-5a28953de518)
 
 
 English
