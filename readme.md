@@ -105,7 +105,7 @@ Linux:
 
 ВК: https://vk.com/war3ragnarok
 
-Telegram: https://t.me/ragnaroklegacy
+Telegram: https://t.me/wc3ragnaroklegacy
 
 Как часто выходят обновления?
 
