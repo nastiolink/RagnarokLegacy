@@ -10,6 +10,7 @@ Each added faction has AI. The add-on is powered by the MM Engine:
 https://github.com/Ev3nt/MM-Engine
 MME allows you to create our unrivaled client game. Compatible game version: 1.26a.
 You can play online via LAN using a LAN emulator. Only russian language support.
+This project is written in [Jass](https://www.hiveworkshop.com/threads/jass-newgen-pack.115679/), the scripting language used for Warcraft III modding.
 
 Official site: https://sites.google.com/view/wcragnaroklegacy/Home
 
