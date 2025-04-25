@@ -669,7 +669,22 @@ globals
     group                   udg_e21                    = null
     group                   udg_e29                    = null
     location                udg_obnulen_6              = null
- 
+     unit                    udg_target                 = null
+    group                   udg_picked                 = null
+    unit                    udg_Dammy                  = null
+    unit                    udg_Dammy1                 = null
+    real                    udg_keh1                   = 0
+    group                   udg_e22                    = null
+    integer                 udg_randomelekcir          = 0
+    group                   udg_e31                    = null
+    group                   udg_e32                    = null
+    group                   udg_e3                     = null
+    unit                    udg_UnitVarCaster3         = null
+    unit                    udg_UnitVarPicked          = null
+    location                udg_TempLoc15              = null
+    location                udg_TempLoc7               = null
+    location                udg_obnulen_8              = null
+    group                   udg_eq2                    = null
 
 
     
@@ -715,7 +730,28 @@ globals
     trigger                 gg_trg_prokelem            = null
     trigger                 gg_trg_silaStihi4          = null
     trigger                 gg_trg_prizivelema2        = null
-
+    
+    trigger                 gg_trg_sytelimaga2         = null
+    trigger                 gg_trg_sytelimaga3         = null
+    trigger                 gg_trg_Rtibek              = null
+    trigger                 gg_trg_Hronoluc            = null
+    trigger                 gg_trg_sytelimaga4         = null
+    trigger                 gg_trg_Prizivlida          = null
+    trigger                 gg_trg_racanie             = null
+    trigger                 gg_trg_sposoohdik          = null
+    trigger                 gg_trg_obnulbaff2          = null
+    trigger                 gg_trg_Silaohotnika        = null
+    trigger                 gg_trg_racanie2            = null
+    trigger                 gg_trg_Hans_na_granat      = null
+    trigger                 gg_trg_Hans_na_granat2     = null
+    trigger                 gg_trg_Sila_stai           = null
+    trigger                 gg_trg_Sila_sta2           = null
+    trigger                 gg_trg_Riviok              = null
+    trigger                 gg_trg_Riviok1             = null
+    trigger                 gg_trg_SilaIllidana        = null
+    trigger                 gg_trg_kotrohan            = null
+    trigger                 gg_trg_silaStihi445        = null
+    trigger                 gg_trg_smenacmen           = null
 
     trigger gg_trg_LizardmanRiderAnimationDebug    = null
     trigger gg_trg_StartedCameraSet                = null
@@ -735,6 +771,14 @@ function BJDebugMsg takes string msg returns nothing
     local integer i = 0
     set udg_e21 = CreateGroup()
     set udg_e29 = CreateGroup()
+    set udg_picked  = CreateGroup()
+    set udg_keh1 = 0
+    set udg_e22 = CreateGroup()
+    set udg_randomelekcir = 0
+    set udg_e31 = CreateGroup()
+    set udg_e32 = CreateGroup()
+    set udg_e3 = CreateGroup()
+    set udg_eq2 = CreateGroup()
     loop
         call DisplayTimedTextToPlayer(Player(i),0,0,60,msg)
         set i = i + 1
@@ -9318,7 +9362,1366 @@ function InitTrig_prizivelema2 takes nothing returns nothing
     call TriggerAddAction( gg_trg_prizivelema2, function Trig_prizivelema2_Actions )
 endfunction
 
+ //===========================================================================
+// Trigger: sytelimaga2
+//===========================================================================
+function Trig_sytelimaga2_Conditions takes nothing returns boolean
+    if ( not ( GetSpellAbilityId() == 'A6O9' ) ) then
+        return false
+    endif
+    return true
+endfunction
 
+function Trig_sytelimaga2_Func002Func003002003001 takes nothing returns boolean
+    return ( IsUnitEnemy(GetFilterUnit(), GetOwningPlayer(GetSpellAbilityUnit())) == true )
+endfunction
+
+function Trig_sytelimaga2_Func002Func003002003002001 takes nothing returns boolean
+    return ( IsUnitType(GetFilterUnit(), UNIT_TYPE_MECHANICAL) == false )
+endfunction
+
+function Trig_sytelimaga2_Func002Func003002003002002001 takes nothing returns boolean
+    return ( IsUnitType(GetFilterUnit(), UNIT_TYPE_STRUCTURE) == false )
+endfunction
+
+function Trig_sytelimaga2_Func002Func003002003002002002 takes nothing returns boolean
+    return ( GetUnitTypeId(GetFilterUnit()) != GetUnitTypeId(GetSpellTargetUnit()) )
+endfunction
+
+function Trig_sytelimaga2_Func002Func003002003002002 takes nothing returns boolean
+    return GetBooleanAnd( Trig_sytelimaga2_Func002Func003002003002002001(), Trig_sytelimaga2_Func002Func003002003002002002() )
+endfunction
+
+function Trig_sytelimaga2_Func002Func003002003002 takes nothing returns boolean
+    return GetBooleanAnd( Trig_sytelimaga2_Func002Func003002003002001(), Trig_sytelimaga2_Func002Func003002003002002() )
+endfunction
+
+function Trig_sytelimaga2_Func002Func003002003 takes nothing returns boolean
+    return GetBooleanAnd( Trig_sytelimaga2_Func002Func003002003001(), Trig_sytelimaga2_Func002Func003002003002() )
+endfunction
+
+function Trig_sytelimaga2_Func002Func004Func002A takes nothing returns nothing
+    call CreateNUnitsAtLoc( 1, 'e61J', GetOwningPlayer(GetSpellAbilityUnit()), udg_obnulen_7, bj_UNIT_FACING )
+    call SetUnitAbilityLevelSwapped( 'A6OA', GetLastCreatedUnit(), GetUnitAbilityLevelSwapped(GetSpellAbilityId(), GetSpellAbilityUnit()) )
+    call IssueTargetOrder( GetLastCreatedUnit(), "shadowstrike", GetEnumUnit() )
+endfunction
+
+function Trig_sytelimaga2_Func002Func004A takes nothing returns nothing
+    set udg_e29 = GetRandomSubGroup(1, udg_e21)
+    call ForGroupBJ( udg_e29, function Trig_sytelimaga2_Func002Func004Func002A )
+    call DestroyGroup(udg_e29)
+endfunction
+
+function Trig_sytelimaga2_Func002C takes nothing returns boolean
+    if ( not ( GetSpellAbilityId() == 'A6O9' ) ) then
+        return false
+    endif
+    return true
+endfunction
+
+function Trig_sytelimaga2_Actions takes nothing returns nothing
+    if ( Trig_sytelimaga2_Func002C() ) then
+        set udg_obnulen_7 = GetUnitLoc(GetSpellAbilityUnit())
+        set udg_e21 = GetUnitsInRangeOfLocMatching(800.00, udg_obnulen_7, Condition(function Trig_sytelimaga2_Func002Func003002003))
+        call ForGroupBJ( udg_e21, function Trig_sytelimaga2_Func002Func004A )
+        call RemoveLocation( udg_obnulen_7)
+        call DestroyGroup(udg_e21)
+    else
+    endif
+endfunction
+
+//===========================================================================
+function InitTrig_sytelimaga2 takes nothing returns nothing
+    set gg_trg_sytelimaga2 = CreateTrigger(  )
+    call TriggerRegisterAnyUnitEventBJ( gg_trg_sytelimaga2, EVENT_PLAYER_UNIT_SPELL_EFFECT )
+    call TriggerAddCondition( gg_trg_sytelimaga2, Condition( function Trig_sytelimaga2_Conditions ) )
+    call TriggerAddAction( gg_trg_sytelimaga2, function Trig_sytelimaga2_Actions )
+endfunction
+
+//===========================================================================
+// Trigger: sytelimaga3
+//===========================================================================
+function Trig_sytelimaga3_Func004C takes nothing returns boolean
+    return false
+endfunction
+
+function Trig_sytelimaga3_Conditions takes nothing returns boolean
+    if ( not Trig_sytelimaga3_Func004C() ) then
+        return false
+    endif
+    if ( not ( UnitHasBuffBJ(GetSpellAbilityUnit(), 'B65L') == true ) ) then
+        return false
+    endif
+    if ( not ( UnitHasBuffBJ(GetSpellAbilityUnit(), 'B65M') == true ) ) then
+        return false
+    endif
+    if ( not ( UnitHasBuffBJ(GetSpellAbilityUnit(), 'B65N') == true ) ) then
+        return false
+    endif
+    return true
+endfunction
+
+function Trig_sytelimaga3_Func001C takes nothing returns boolean
+    if ( not ( UnitHasBuffBJ(GetSpellAbilityUnit(), 'B65L') == true ) ) then
+        return false
+    endif
+    return true
+endfunction
+
+function Trig_sytelimaga3_Func002C takes nothing returns boolean
+    if ( not ( UnitHasBuffBJ(GetSpellAbilityUnit(), 'B65M') == true ) ) then
+        return false
+    endif
+    return true
+endfunction
+
+function Trig_sytelimaga3_Func003C takes nothing returns boolean
+    if ( not ( UnitHasBuffBJ(GetSpellAbilityUnit(), 'B65N') == true ) ) then
+        return false
+    endif
+    return true
+endfunction
+
+function Trig_sytelimaga3_Actions takes nothing returns nothing
+    if ( Trig_sytelimaga3_Func001C() ) then
+        call SetUnitLifeBJ( GetSpellAbilityUnit(), ( GetUnitStateSwap(UNIT_STATE_LIFE, GetSpellAbilityUnit()) - 15.00 ) )
+    else
+    endif
+    if ( Trig_sytelimaga3_Func002C() ) then
+        call SetUnitLifeBJ( GetSpellAbilityUnit(), ( GetUnitStateSwap(UNIT_STATE_LIFE, GetSpellAbilityUnit()) - 25.00 ) )
+    else
+    endif
+    if ( Trig_sytelimaga3_Func003C() ) then
+        call SetUnitLifeBJ( GetSpellAbilityUnit(), ( GetUnitStateSwap(UNIT_STATE_LIFE, GetSpellAbilityUnit()) - 35.00 ) )
+    else
+    endif
+endfunction
+
+//===========================================================================
+function InitTrig_sytelimaga3 takes nothing returns nothing
+    set gg_trg_sytelimaga3 = CreateTrigger(  )
+    call TriggerRegisterAnyUnitEventBJ( gg_trg_sytelimaga3, EVENT_PLAYER_UNIT_SPELL_EFFECT )
+    call TriggerAddCondition( gg_trg_sytelimaga3, Condition( function Trig_sytelimaga3_Conditions ) )
+    call TriggerAddAction( gg_trg_sytelimaga3, function Trig_sytelimaga3_Actions )
+endfunction
+
+//===========================================================================
+// Trigger: Rtibek
+//===========================================================================
+function Trig_Rtibek_Func004C takes nothing returns boolean
+    if ( ( UnitHasBuffBJ(GetSpellAbilityUnit(), 'B65P') == true ) ) then
+        return true
+    endif
+    if ( ( UnitHasBuffBJ(GetSpellAbilityUnit(), 'B65Q') == true ) ) then
+        return true
+    endif
+    if ( ( UnitHasBuffBJ(GetSpellAbilityUnit(), 'B65R') == true ) ) then
+        return true
+    endif
+    return false
+endfunction
+
+function Trig_Rtibek_Conditions takes nothing returns boolean
+    if ( not Trig_Rtibek_Func004C() ) then
+        return false
+    endif
+    return true
+endfunction
+
+function Trig_Rtibek_Func001C takes nothing returns boolean
+    if ( not ( UnitHasBuffBJ(GetSpellAbilityUnit(), 'B65R') == true ) ) then
+        return false
+    endif
+    return true
+endfunction
+
+function Trig_Rtibek_Func002C takes nothing returns boolean
+    if ( not ( UnitHasBuffBJ(GetSpellAbilityUnit(), 'B65Q') == true ) ) then
+        return false
+    endif
+    return true
+endfunction
+
+function Trig_Rtibek_Func003C takes nothing returns boolean
+    if ( not ( UnitHasBuffBJ(GetSpellAbilityUnit(), 'B65P') == true ) ) then
+        return false
+    endif
+    return true
+endfunction
+
+function Trig_Rtibek_Actions takes nothing returns nothing
+    if ( Trig_Rtibek_Func001C() ) then
+        set udg_keh1 = GetUnitStateSwap(UNIT_STATE_MANA, GetSpellAbilityUnit())
+        call TriggerSleepAction( 1.00 )
+        call SetUnitManaBJ( GetSpellAbilityUnit(), ( ( GetUnitStateSwap(UNIT_STATE_MANA, GetSpellAbilityUnit()) + ( ( udg_keh1 - GetUnitStateSwap(UNIT_STATE_MANA, GetSpellAbilityUnit()) ) * 0.30 ) ) + 0.00 ) )
+    else
+    endif
+    if ( Trig_Rtibek_Func002C() ) then
+        set udg_keh1 = GetUnitStateSwap(UNIT_STATE_MANA, GetSpellAbilityUnit())
+        call TriggerSleepAction( 1.00 )
+        call SetUnitManaBJ( GetSpellAbilityUnit(), ( ( GetUnitStateSwap(UNIT_STATE_MANA, GetSpellAbilityUnit()) + ( ( udg_keh1 - GetUnitStateSwap(UNIT_STATE_MANA, GetSpellAbilityUnit()) ) * 0.20 ) ) + 0.00 ) )
+    else
+    endif
+    if ( Trig_Rtibek_Func003C() ) then
+        set udg_keh1 = GetUnitStateSwap(UNIT_STATE_MANA, GetSpellAbilityUnit())
+        call TriggerSleepAction( 1.00 )
+        call SetUnitManaBJ( GetSpellAbilityUnit(), ( ( GetUnitStateSwap(UNIT_STATE_MANA, GetSpellAbilityUnit()) + ( ( udg_keh1 - GetUnitStateSwap(UNIT_STATE_MANA, GetSpellAbilityUnit()) ) * 0.10 ) ) + 0.00 ) )
+    else
+    endif
+endfunction
+
+//===========================================================================
+function InitTrig_Rtibek takes nothing returns nothing
+    set gg_trg_Rtibek = CreateTrigger(  )
+    call TriggerRegisterAnyUnitEventBJ( gg_trg_Rtibek, EVENT_PLAYER_UNIT_SPELL_CAST )
+    call TriggerAddCondition( gg_trg_Rtibek, Condition( function Trig_Rtibek_Conditions ) )
+    call TriggerAddAction( gg_trg_Rtibek, function Trig_Rtibek_Actions )
+endfunction
+
+//===========================================================================
+// Trigger: Hronoluc
+//===========================================================================
+function Trig_Hronoluc_Conditions takes nothing returns boolean
+    if ( not ( GetSpellAbilityId() == 'A6OD' ) ) then
+        return false
+    endif
+    return true
+endfunction
+
+function Trig_Hronoluc_Actions takes nothing returns nothing
+    call UnitResetCooldown( GetSpellTargetUnit() )
+endfunction
+
+//===========================================================================
+function InitTrig_Hronoluc takes nothing returns nothing
+    set gg_trg_Hronoluc = CreateTrigger(  )
+    call TriggerRegisterAnyUnitEventBJ( gg_trg_Hronoluc, EVENT_PLAYER_UNIT_SPELL_EFFECT )
+    call TriggerAddCondition( gg_trg_Hronoluc, Condition( function Trig_Hronoluc_Conditions ) )
+    call TriggerAddAction( gg_trg_Hronoluc, function Trig_Hronoluc_Actions )
+endfunction
+
+//===========================================================================
+// Trigger: sytelimaga4
+//===========================================================================
+function Trig_sytelimaga4_Conditions takes nothing returns boolean
+    if ( not ( GetSpellAbilityId() == 'A6OE' ) ) then
+        return false
+    endif
+    return true
+endfunction
+
+function Trig_sytelimaga4_Func002Func003002003001 takes nothing returns boolean
+    return ( IsUnitEnemy(GetFilterUnit(), GetOwningPlayer(GetSpellAbilityUnit())) == true )
+endfunction
+
+function Trig_sytelimaga4_Func002Func003002003002001 takes nothing returns boolean
+    return ( IsUnitType(GetFilterUnit(), UNIT_TYPE_MECHANICAL) == false )
+endfunction
+
+function Trig_sytelimaga4_Func002Func003002003002002001 takes nothing returns boolean
+    return ( IsUnitType(GetFilterUnit(), UNIT_TYPE_STRUCTURE) == false )
+endfunction
+
+function Trig_sytelimaga4_Func002Func003002003002002002 takes nothing returns boolean
+    return ( GetUnitTypeId(GetFilterUnit()) != GetUnitTypeId(GetSpellTargetUnit()) )
+endfunction
+
+function Trig_sytelimaga4_Func002Func003002003002002 takes nothing returns boolean
+    return GetBooleanAnd( Trig_sytelimaga4_Func002Func003002003002002001(), Trig_sytelimaga4_Func002Func003002003002002002() )
+endfunction
+
+function Trig_sytelimaga4_Func002Func003002003002 takes nothing returns boolean
+    return GetBooleanAnd( Trig_sytelimaga4_Func002Func003002003002001(), Trig_sytelimaga4_Func002Func003002003002002() )
+endfunction
+
+function Trig_sytelimaga4_Func002Func003002003 takes nothing returns boolean
+    return GetBooleanAnd( Trig_sytelimaga4_Func002Func003002003001(), Trig_sytelimaga4_Func002Func003002003002() )
+endfunction
+
+function Trig_sytelimaga4_Func002Func004Func002A takes nothing returns nothing
+    call CreateNUnitsAtLoc( 1, 'e61K', GetOwningPlayer(GetEnumUnit()), udg_obnulen_7, bj_UNIT_FACING )
+    call SetUnitAbilityLevelSwapped( 'A6OF', GetLastCreatedUnit(), GetUnitAbilityLevelSwapped(GetSpellAbilityId(), GetSpellAbilityUnit()) )
+    call IssueTargetOrder( GetLastCreatedUnit(), "shadowstrike", GetEnumUnit() )
+endfunction
+
+function Trig_sytelimaga4_Func002Func004A takes nothing returns nothing
+    set udg_e29 = GetRandomSubGroup(3, udg_e21)
+    call ForGroupBJ( udg_e29, function Trig_sytelimaga4_Func002Func004Func002A )
+    call DestroyGroup(udg_e29)
+endfunction
+
+function Trig_sytelimaga4_Func002C takes nothing returns boolean
+    if ( not ( GetSpellAbilityId() == 'A6OE' ) ) then
+        return false
+    endif
+    return true
+endfunction
+
+function Trig_sytelimaga4_Actions takes nothing returns nothing
+    if ( Trig_sytelimaga4_Func002C() ) then
+        set udg_obnulen_7 = GetUnitLoc(GetSpellAbilityUnit())
+        set udg_e21 = GetUnitsInRangeOfLocMatching(800.00, udg_obnulen_7, Condition(function Trig_sytelimaga4_Func002Func003002003))
+        call ForGroupBJ( udg_e21, function Trig_sytelimaga4_Func002Func004A )
+        call RemoveLocation( udg_obnulen_7)
+        call DestroyGroup(udg_e21)
+    else
+    endif
+endfunction
+
+//===========================================================================
+function InitTrig_sytelimaga4 takes nothing returns nothing
+    set gg_trg_sytelimaga4 = CreateTrigger(  )
+    call TriggerRegisterAnyUnitEventBJ( gg_trg_sytelimaga4, EVENT_PLAYER_UNIT_SPELL_EFFECT )
+    call TriggerAddCondition( gg_trg_sytelimaga4, Condition( function Trig_sytelimaga4_Conditions ) )
+    call TriggerAddAction( gg_trg_sytelimaga4, function Trig_sytelimaga4_Actions )
+endfunction
+
+//===========================================================================
+// Trigger: Prizivlida
+//===========================================================================
+function Trig_Prizivlida_Conditions takes nothing returns boolean
+    if ( not ( GetUnitAbilityLevelSwapped('S60C', GetSummonedUnit()) > 0 ) ) then
+        return false
+    endif
+    return true
+endfunction
+
+function Trig_Prizivlida_Actions takes nothing returns nothing
+    call IssueImmediateOrder( GetSummonedUnit(), "stomp" )
+endfunction
+
+//===========================================================================
+function InitTrig_Prizivlida takes nothing returns nothing
+    set gg_trg_Prizivlida = CreateTrigger(  )
+    call TriggerRegisterAnyUnitEventBJ( gg_trg_Prizivlida, EVENT_PLAYER_UNIT_SUMMON )
+    call TriggerAddCondition( gg_trg_Prizivlida, Condition( function Trig_Prizivlida_Conditions ) )
+    call TriggerAddAction( gg_trg_Prizivlida, function Trig_Prizivlida_Actions )
+endfunction
+
+//===========================================================================
+// Trigger: racanie
+//===========================================================================
+function Trig_racanie_Conditions takes nothing returns boolean
+    if ( not ( GetSpellAbilityId() == 'A6OI' ) ) then
+        return false
+    endif
+    return true
+endfunction
+
+function Trig_racanie_Func002C takes nothing returns boolean
+    if ( not ( GetSpellAbilityId() == 'A6OI' ) ) then
+        return false
+    endif
+    return true
+endfunction
+
+function Trig_racanie_Actions takes nothing returns nothing
+    if ( Trig_racanie_Func002C() ) then
+        set udg_obnulen_7 = GetUnitLoc(GetSpellAbilityUnit())
+        call CreateNUnitsAtLoc( 1, 'e61N', GetOwningPlayer(GetSpellAbilityUnit()), udg_obnulen_7, bj_UNIT_FACING )
+        call SetUnitAbilityLevelSwapped( 'A6OJ', GetLastCreatedUnit(), GetUnitAbilityLevelSwapped(GetSpellAbilityId(), GetSpellAbilityUnit()) )
+        call IssueTargetOrder( GetLastCreatedUnit(), "frostarmor", GetSpellAbilityUnit() )
+        call RemoveLocation( udg_obnulen_7)
+    else
+    endif
+endfunction
+
+//===========================================================================
+function InitTrig_racanie takes nothing returns nothing
+    set gg_trg_racanie = CreateTrigger(  )
+    call TriggerRegisterAnyUnitEventBJ( gg_trg_racanie, EVENT_PLAYER_UNIT_SPELL_EFFECT )
+    call TriggerAddCondition( gg_trg_racanie, Condition( function Trig_racanie_Conditions ) )
+    call TriggerAddAction( gg_trg_racanie, function Trig_racanie_Actions )
+endfunction
+
+//===========================================================================
+// Trigger: sposoohdik
+//===========================================================================
+function Trig_sposoohdik_Conditions takes nothing returns boolean
+    if ( not ( GetLearnedSkillBJ() == 'A6OK' ) ) then
+        return false
+    endif
+    return true
+endfunction
+
+function Trig_sposoohdik_Actions takes nothing returns nothing
+    call SetPlayerAbilityAvailableBJ( false, 'A6OK', GetOwningPlayer(GetLearningUnit()) )
+    call UnitAddAbilityBJ( 'A6OL', GetLearningUnit() )
+endfunction
+
+//===========================================================================
+function InitTrig_sposoohdik takes nothing returns nothing
+    set gg_trg_sposoohdik = CreateTrigger(  )
+    call TriggerRegisterAnyUnitEventBJ( gg_trg_sposoohdik, EVENT_PLAYER_HERO_SKILL )
+    call TriggerAddCondition( gg_trg_sposoohdik, Condition( function Trig_sposoohdik_Conditions ) )
+    call TriggerAddAction( gg_trg_sposoohdik, function Trig_sposoohdik_Actions )
+endfunction
+
+//===========================================================================
+// Trigger: obnulbaff2
+//===========================================================================
+function Trig_obnulbaff2_Conditions takes nothing returns boolean
+    if ( not ( GetItemTypeId(GetManipulatedItem()) == 'tret' ) ) then
+        return false
+    endif
+    if ( not ( GetUnitAbilityLevelSwapped('A6OL', GetManipulatingUnit()) == 1 ) ) then
+        return false
+    endif
+    return true
+endfunction
+
+function Trig_obnulbaff2_Actions takes nothing returns nothing
+    call UnitRemoveAbilityBJ( 'A6OL', GetManipulatingUnit() )
+    call SetPlayerAbilityAvailableBJ( true, 'A6OK', GetOwningPlayer(GetManipulatingUnit()) )
+endfunction
+
+//===========================================================================
+function InitTrig_obnulbaff2 takes nothing returns nothing
+    set gg_trg_obnulbaff2 = CreateTrigger(  )
+    call TriggerRegisterAnyUnitEventBJ( gg_trg_obnulbaff2, EVENT_PLAYER_UNIT_USE_ITEM )
+    call TriggerAddCondition( gg_trg_obnulbaff2, Condition( function Trig_obnulbaff2_Conditions ) )
+    call TriggerAddAction( gg_trg_obnulbaff2, function Trig_obnulbaff2_Actions )
+endfunction
+
+//===========================================================================
+// Trigger: Silaohotnika
+//===========================================================================
+function Trig_Silaohotnika_Conditions takes nothing returns boolean
+    if ( not ( GetUnitAbilityLevelSwapped('A6OL', GetOrderedUnit()) >= 1 ) ) then
+        return false
+    endif
+    return true
+endfunction
+
+function Trig_Silaohotnika_Func002002003001 takes nothing returns boolean
+    return ( IsUnitEnemy(GetFilterUnit(), GetOwningPlayer(GetOrderedUnit())) == true )
+endfunction
+
+function Trig_Silaohotnika_Func002002003002001 takes nothing returns boolean
+    return ( IsUnitType(GetFilterUnit(), UNIT_TYPE_HERO) == true )
+endfunction
+
+function Trig_Silaohotnika_Func002002003002002 takes nothing returns boolean
+    return ( GetUnitStateSwap(UNIT_STATE_LIFE, GetFilterUnit()) < ( GetUnitStateSwap(UNIT_STATE_MAX_LIFE, GetFilterUnit()) * 0.50 ) )
+endfunction
+
+function Trig_Silaohotnika_Func002002003002 takes nothing returns boolean
+    return GetBooleanAnd( Trig_Silaohotnika_Func002002003002001(), Trig_Silaohotnika_Func002002003002002() )
+endfunction
+
+function Trig_Silaohotnika_Func002002003 takes nothing returns boolean
+    return GetBooleanAnd( Trig_Silaohotnika_Func002002003001(), Trig_Silaohotnika_Func002002003002() )
+endfunction
+
+function Trig_Silaohotnika_Func003Func001C takes nothing returns boolean
+    if ( not ( GetUnitAbilityLevelSwapped('A6OL', GetOrderedUnit()) == 2 ) ) then
+        return false
+    endif
+    if ( not ( CountUnitsInGroup(udg_e22) == 0 ) ) then
+        return false
+    endif
+    return true
+endfunction
+
+function Trig_Silaohotnika_Func003C takes nothing returns boolean
+    if ( not ( GetUnitAbilityLevelSwapped('A6OL', GetOrderedUnit()) == 1 ) ) then
+        return false
+    endif
+    if ( not ( CountUnitsInGroup(udg_e22) > 0 ) ) then
+        return false
+    endif
+    return true
+endfunction
+
+function Trig_Silaohotnika_Func004A takes nothing returns nothing
+endfunction
+
+function Trig_Silaohotnika_Actions takes nothing returns nothing
+    set udg_obnulen_7 = GetUnitLoc(GetOrderedUnit())
+    set udg_e22 = GetUnitsInRangeOfLocMatching(2000.00, udg_obnulen_7, Condition(function Trig_Silaohotnika_Func002002003))
+    if ( Trig_Silaohotnika_Func003C() ) then
+        call SetUnitAbilityLevelSwapped( 'A6OL', GetOrderedUnit(), 2 )
+    else
+        if ( Trig_Silaohotnika_Func003Func001C() ) then
+            call SetUnitAbilityLevelSwapped( 'A6OL', GetOrderedUnit(), 1 )
+        else
+        endif
+    endif
+    call ForGroupBJ( udg_e22, function Trig_Silaohotnika_Func004A )
+    call RemoveLocation( udg_obnulen_7)
+    call DestroyGroup(udg_e22)
+endfunction
+
+//===========================================================================
+function InitTrig_Silaohotnika takes nothing returns nothing
+    set gg_trg_Silaohotnika = CreateTrigger(  )
+    call TriggerRegisterAnyUnitEventBJ( gg_trg_Silaohotnika, EVENT_PLAYER_UNIT_ISSUED_POINT_ORDER )
+    call TriggerAddCondition( gg_trg_Silaohotnika, Condition( function Trig_Silaohotnika_Conditions ) )
+    call TriggerAddAction( gg_trg_Silaohotnika, function Trig_Silaohotnika_Actions )
+endfunction
+
+//===========================================================================
+// Trigger: racanie2
+//===========================================================================
+function Trig_racanie2_Conditions takes nothing returns boolean
+    if ( not ( GetSpellAbilityId() == 'A6OH' ) ) then
+        return false
+    endif
+    return true
+endfunction
+
+function Trig_racanie2_Func002C takes nothing returns boolean
+    if ( not ( GetUnitAbilityLevelSwapped('A6OS', GetSpellAbilityUnit()) == 1 ) ) then
+        return false
+    endif
+    return true
+endfunction
+
+function Trig_racanie2_Func003C takes nothing returns boolean
+    if ( not ( GetUnitAbilityLevelSwapped('A6OS', GetSpellAbilityUnit()) == 2 ) ) then
+        return false
+    endif
+    return true
+endfunction
+
+function Trig_racanie2_Func004C takes nothing returns boolean
+    if ( not ( GetUnitAbilityLevelSwapped('A6OS', GetSpellAbilityUnit()) == 3 ) ) then
+        return false
+    endif
+    return true
+endfunction
+
+function Trig_racanie2_Actions takes nothing returns nothing
+    if ( Trig_racanie2_Func002C() ) then
+        set udg_obnulen_7 = GetUnitLoc(GetSpellAbilityUnit())
+        call CreateNUnitsAtLoc( 1, 'e61M', GetOwningPlayer(GetSpellAbilityUnit()), udg_obnulen_7, bj_UNIT_FACING )
+        call IssueImmediateOrder( GetLastCreatedUnit(), "stomp" )
+        call RemoveLocation( udg_obnulen_7)
+    else
+    endif
+    if ( Trig_racanie2_Func003C() ) then
+        set udg_obnulen_7 = GetUnitLoc(GetSpellAbilityUnit())
+        call CreateNUnitsAtLoc( 1, 'e61O', GetOwningPlayer(GetSpellAbilityUnit()), udg_obnulen_7, bj_UNIT_FACING )
+        call IssueImmediateOrder( GetLastCreatedUnit(), "stomp" )
+        call RemoveLocation( udg_obnulen_7)
+    else
+    endif
+    if ( Trig_racanie2_Func004C() ) then
+        set udg_obnulen_7 = GetUnitLoc(GetSpellAbilityUnit())
+        call CreateNUnitsAtLoc( 1, 'e61P', GetOwningPlayer(GetSpellAbilityUnit()), udg_obnulen_7, bj_UNIT_FACING )
+        call IssueImmediateOrder( GetLastCreatedUnit(), "stomp" )
+        call RemoveLocation( udg_obnulen_7)
+    else
+    endif
+endfunction
+
+//===========================================================================
+function InitTrig_racanie2 takes nothing returns nothing
+    set gg_trg_racanie2 = CreateTrigger(  )
+    call TriggerRegisterAnyUnitEventBJ( gg_trg_racanie2, EVENT_PLAYER_UNIT_SPELL_EFFECT )
+    call TriggerAddCondition( gg_trg_racanie2, Condition( function Trig_racanie2_Conditions ) )
+    call TriggerAddAction( gg_trg_racanie2, function Trig_racanie2_Actions )
+endfunction
+
+//===========================================================================
+// Trigger: Hans na granat
+//===========================================================================
+function Trig_Hans_na_granat_Conditions takes nothing returns boolean
+    if ( not ( GetSpellAbilityId() == 'A6OQ' ) ) then
+        return false
+    endif
+    return true
+endfunction
+
+function Trig_Hans_na_granat_Func003Func003C takes nothing returns boolean
+    if ( not ( udg_randomelekcir == 1 ) ) then
+        return false
+    endif
+    return true
+endfunction
+
+function Trig_Hans_na_granat_Func003C takes nothing returns boolean
+    if ( not ( GetUnitAbilityLevelSwapped('A6OS', GetSpellAbilityUnit()) == 1 ) ) then
+        return false
+    endif
+    return true
+endfunction
+
+function Trig_Hans_na_granat_Func004Func003C takes nothing returns boolean
+    if ( not ( udg_randomelekcir == 1 ) ) then
+        return false
+    endif
+    return true
+endfunction
+
+function Trig_Hans_na_granat_Func004C takes nothing returns boolean
+    if ( not ( GetUnitAbilityLevelSwapped('A6OS', GetSpellAbilityUnit()) == 2 ) ) then
+        return false
+    endif
+    return true
+endfunction
+
+function Trig_Hans_na_granat_Func005Func003C takes nothing returns boolean
+    if ( not ( udg_randomelekcir == 1 ) ) then
+        return false
+    endif
+    return true
+endfunction
+
+function Trig_Hans_na_granat_Func005C takes nothing returns boolean
+    if ( not ( GetUnitAbilityLevelSwapped('A6OS', GetSpellAbilityUnit()) == 3 ) ) then
+        return false
+    endif
+    return true
+endfunction
+
+function Trig_Hans_na_granat_Actions takes nothing returns nothing
+    if ( Trig_Hans_na_granat_Func003C() ) then
+        set udg_randomelekcir = GetRandomInt(1, 10)
+        if ( Trig_Hans_na_granat_Func003Func003C() ) then
+            set udg_obnulen_6 = GetSpellTargetLoc()
+            set udg_obnulen_7 = GetUnitLoc(GetSpellAbilityUnit())
+            call CreateNUnitsAtLoc( 1, 'e61Q', GetOwningPlayer(GetSpellAbilityUnit()), udg_obnulen_7, bj_UNIT_FACING )
+            call SetUnitAbilityLevelSwapped( 'A6OR', GetLastCreatedUnit(), GetUnitAbilityLevelSwapped(GetSpellAbilityId(), GetSpellAbilityUnit()) )
+            call IssuePointOrderLoc( GetLastCreatedUnit(), "clusterrockets", udg_obnulen_6 )
+            call RemoveLocation( udg_obnulen_7)
+            call RemoveLocation( udg_obnulen_6)
+        else
+        endif
+    else
+    endif
+    if ( Trig_Hans_na_granat_Func004C() ) then
+        set udg_randomelekcir = GetRandomInt(1, 5)
+        if ( Trig_Hans_na_granat_Func004Func003C() ) then
+            set udg_obnulen_6 = GetSpellTargetLoc()
+            set udg_obnulen_7 = GetUnitLoc(GetSpellAbilityUnit())
+            call CreateNUnitsAtLoc( 1, 'e61Q', GetOwningPlayer(GetSpellAbilityUnit()), udg_obnulen_7, bj_UNIT_FACING )
+            call SetUnitAbilityLevelSwapped( 'A6OR', GetLastCreatedUnit(), GetUnitAbilityLevelSwapped(GetSpellAbilityId(), GetSpellAbilityUnit()) )
+            call IssuePointOrderLoc( GetLastCreatedUnit(), "clusterrockets", udg_obnulen_6 )
+            call RemoveLocation( udg_obnulen_7)
+            call RemoveLocation( udg_obnulen_6)
+        else
+        endif
+    else
+    endif
+    if ( Trig_Hans_na_granat_Func005C() ) then
+        set udg_randomelekcir = GetRandomInt(1, 3)
+        if ( Trig_Hans_na_granat_Func005Func003C() ) then
+            set udg_obnulen_6 = GetSpellTargetLoc()
+            set udg_obnulen_7 = GetUnitLoc(GetSpellAbilityUnit())
+            call CreateNUnitsAtLoc( 1, 'e61Q', GetOwningPlayer(GetSpellAbilityUnit()), udg_obnulen_7, bj_UNIT_FACING )
+            call SetUnitAbilityLevelSwapped( 'A6OR', GetLastCreatedUnit(), GetUnitAbilityLevelSwapped(GetSpellAbilityId(), GetSpellAbilityUnit()) )
+            call IssuePointOrderLoc( GetLastCreatedUnit(), "clusterrockets", udg_obnulen_6 )
+            call RemoveLocation( udg_obnulen_7)
+            call RemoveLocation( udg_obnulen_6)
+        else
+        endif
+    else
+    endif
+endfunction
+
+//===========================================================================
+function InitTrig_Hans_na_granat takes nothing returns nothing
+    set gg_trg_Hans_na_granat = CreateTrigger(  )
+    call TriggerRegisterAnyUnitEventBJ( gg_trg_Hans_na_granat, EVENT_PLAYER_UNIT_SPELL_EFFECT )
+    call TriggerAddCondition( gg_trg_Hans_na_granat, Condition( function Trig_Hans_na_granat_Conditions ) )
+    call TriggerAddAction( gg_trg_Hans_na_granat, function Trig_Hans_na_granat_Actions )
+endfunction
+
+//===========================================================================
+// Trigger: Hans na granat2
+//===========================================================================
+function Trig_Hans_na_granat2_Conditions takes nothing returns boolean
+    if ( not ( GetSpellAbilityId() == 'A6OU' ) ) then
+        return false
+    endif
+    return true
+endfunction
+
+function Trig_Hans_na_granat2_Func003Func003C takes nothing returns boolean
+    if ( not ( udg_randomelekcir == 1 ) ) then
+        return false
+    endif
+    return true
+endfunction
+
+function Trig_Hans_na_granat2_Func003C takes nothing returns boolean
+    if ( not ( GetUnitAbilityLevelSwapped('A6OS', GetSpellAbilityUnit()) == 1 ) ) then
+        return false
+    endif
+    return true
+endfunction
+
+function Trig_Hans_na_granat2_Func004Func003C takes nothing returns boolean
+    if ( not ( udg_randomelekcir == 1 ) ) then
+        return false
+    endif
+    return true
+endfunction
+
+function Trig_Hans_na_granat2_Func004C takes nothing returns boolean
+    if ( not ( GetUnitAbilityLevelSwapped('A6OS', GetSpellAbilityUnit()) == 2 ) ) then
+        return false
+    endif
+    return true
+endfunction
+
+function Trig_Hans_na_granat2_Func005Func003C takes nothing returns boolean
+    if ( not ( udg_randomelekcir == 1 ) ) then
+        return false
+    endif
+    return true
+endfunction
+
+function Trig_Hans_na_granat2_Func005C takes nothing returns boolean
+    if ( not ( GetUnitAbilityLevelSwapped('A6OS', GetSpellAbilityUnit()) == 3 ) ) then
+        return false
+    endif
+    return true
+endfunction
+
+function Trig_Hans_na_granat2_Actions takes nothing returns nothing
+    if ( Trig_Hans_na_granat2_Func003C() ) then
+        set udg_randomelekcir = GetRandomInt(1, 5)
+        if ( Trig_Hans_na_granat2_Func003Func003C() ) then
+            call SetUnitManaBJ( GetSpellAbilityUnit(), ( GetUnitStateSwap(UNIT_STATE_MANA, GetSpellAbilityUnit()) + 100.00 ) )
+        else
+        endif
+    else
+    endif
+    if ( Trig_Hans_na_granat2_Func004C() ) then
+        set udg_randomelekcir = GetRandomInt(1, 4)
+        if ( Trig_Hans_na_granat2_Func004Func003C() ) then
+            call SetUnitManaBJ( GetSpellAbilityUnit(), ( GetUnitStateSwap(UNIT_STATE_MANA, GetSpellAbilityUnit()) + 100.00 ) )
+        else
+        endif
+    else
+    endif
+    if ( Trig_Hans_na_granat2_Func005C() ) then
+        set udg_randomelekcir = GetRandomInt(1, 3)
+        if ( Trig_Hans_na_granat2_Func005Func003C() ) then
+            call SetUnitManaBJ( GetSpellAbilityUnit(), ( GetUnitStateSwap(UNIT_STATE_MANA, GetSpellAbilityUnit()) + 100.00 ) )
+        else
+        endif
+    else
+    endif
+endfunction
+
+//===========================================================================
+function InitTrig_Hans_na_granat2 takes nothing returns nothing
+    set gg_trg_Hans_na_granat2 = CreateTrigger(  )
+    call TriggerRegisterAnyUnitEventBJ( gg_trg_Hans_na_granat2, EVENT_PLAYER_UNIT_SPELL_EFFECT )
+    call TriggerAddCondition( gg_trg_Hans_na_granat2, Condition( function Trig_Hans_na_granat2_Conditions ) )
+    call TriggerAddAction( gg_trg_Hans_na_granat2, function Trig_Hans_na_granat2_Actions )
+endfunction
+
+//===========================================================================
+// Trigger: Sila stai
+//===========================================================================
+function Trig_Sila_stai_Func001C takes nothing returns boolean
+    if ( ( GetUnitAbilityLevelSwapped('A6JE', GetAttacker()) > 0 ) ) then
+        return true
+    endif
+    if ( ( GetUnitAbilityLevelSwapped('A001', GetAttacker()) > 0 ) ) then
+        return true
+    endif
+    if ( ( GetUnitAbilityLevelSwapped('A6FX', GetAttacker()) > 0 ) ) then
+        return true
+    endif
+    return false
+endfunction
+
+function Trig_Sila_stai_Conditions takes nothing returns boolean
+    if ( not Trig_Sila_stai_Func001C() ) then
+        return false
+    endif
+    return true
+endfunction
+
+function Trig_Sila_stai_Func002Func002Func002Func001C takes nothing returns boolean
+    if ( not ( GetUnitAbilityLevelSwapped('A6JE', GetEnumUnit()) != CountUnitsInGroup(udg_e32) ) ) then
+        return false
+    endif
+    return true
+endfunction
+
+function Trig_Sila_stai_Func002Func002Func002A takes nothing returns nothing
+    if ( Trig_Sila_stai_Func002Func002Func002Func001C() ) then
+        call SetUnitAbilityLevelSwapped( 'A6JE', GetAttacker(), CountUnitsInGroup(udg_e32) )
+    else
+    endif
+endfunction
+
+function Trig_Sila_stai_Func002Func002A takes nothing returns nothing
+    set udg_e32 = GetRandomSubGroup(7, udg_e31)
+    call ForGroupBJ( udg_e32, function Trig_Sila_stai_Func002Func002Func002A )
+    call DestroyGroup(udg_e32)
+endfunction
+
+function Trig_Sila_stai_Func002C takes nothing returns boolean
+    if ( not ( GetUnitAbilityLevelSwapped('A6JE', GetAttacker()) > 0 ) ) then
+        return false
+    endif
+    if ( not ( UnitHasBuffBJ(GetAttacker(), 'B65V') == false ) ) then
+        return false
+    endif
+    return true
+endfunction
+
+function Trig_Sila_stai_Func003Func002Func002Func001C takes nothing returns boolean
+    if ( not ( GetUnitAbilityLevelSwapped('A001', GetEnumUnit()) != CountUnitsInGroup(udg_e32) ) ) then
+        return false
+    endif
+    return true
+endfunction
+
+function Trig_Sila_stai_Func003Func002Func002A takes nothing returns nothing
+    if ( Trig_Sila_stai_Func003Func002Func002Func001C() ) then
+        call SetUnitAbilityLevelSwapped( 'A001', GetAttacker(), CountUnitsInGroup(udg_e32) )
+    else
+    endif
+endfunction
+
+function Trig_Sila_stai_Func003Func002A takes nothing returns nothing
+    set udg_e32 = GetRandomSubGroup(7, udg_e31)
+    call ForGroupBJ( udg_e32, function Trig_Sila_stai_Func003Func002Func002A )
+    call DestroyGroup(udg_e32)
+endfunction
+
+function Trig_Sila_stai_Func003C takes nothing returns boolean
+    if ( not ( GetUnitAbilityLevelSwapped('A001', GetAttacker()) > 0 ) ) then
+        return false
+    endif
+    if ( not ( UnitHasBuffBJ(GetAttacker(), 'B65V') == false ) ) then
+        return false
+    endif
+    return true
+endfunction
+
+function Trig_Sila_stai_Func004Func002Func002Func001C takes nothing returns boolean
+    if ( not ( GetUnitAbilityLevelSwapped('A6FX', GetEnumUnit()) != CountUnitsInGroup(udg_e32) ) ) then
+        return false
+    endif
+    return true
+endfunction
+
+function Trig_Sila_stai_Func004Func002Func002A takes nothing returns nothing
+    if ( Trig_Sila_stai_Func004Func002Func002Func001C() ) then
+        call SetUnitAbilityLevelSwapped( 'A6FX', GetAttacker(), CountUnitsInGroup(udg_e32) )
+    else
+    endif
+endfunction
+
+function Trig_Sila_stai_Func004Func002A takes nothing returns nothing
+    set udg_e32 = GetRandomSubGroup(7, udg_e31)
+    call ForGroupBJ( udg_e32, function Trig_Sila_stai_Func004Func002Func002A )
+    call DestroyGroup(udg_e32)
+endfunction
+
+function Trig_Sila_stai_Func004C takes nothing returns boolean
+    if ( not ( GetUnitAbilityLevelSwapped('A6FX', GetAttacker()) > 0 ) ) then
+        return false
+    endif
+    if ( not ( UnitHasBuffBJ(GetAttacker(), 'B65V') == false ) ) then
+        return false
+    endif
+    return true
+endfunction
+
+function Trig_Sila_stai_Func005Func002Func002Func001C takes nothing returns boolean
+    if ( not ( GetUnitAbilityLevelSwapped('A6FY', GetEnumUnit()) != CountUnitsInGroup(udg_e32) ) ) then
+        return false
+    endif
+    return true
+endfunction
+
+function Trig_Sila_stai_Func005Func002Func002A takes nothing returns nothing
+    if ( Trig_Sila_stai_Func005Func002Func002Func001C() ) then
+        call SetUnitAbilityLevelSwapped( 'A6FY', GetAttackedUnitBJ(), CountUnitsInGroup(udg_e32) )
+    else
+    endif
+endfunction
+
+function Trig_Sila_stai_Func005Func002A takes nothing returns nothing
+    set udg_e32 = GetRandomSubGroup(7, udg_e31)
+    call ForGroupBJ( udg_e32, function Trig_Sila_stai_Func005Func002Func002A )
+    call DestroyGroup(udg_e32)
+endfunction
+
+function Trig_Sila_stai_Func005C takes nothing returns boolean
+    if ( not ( GetUnitAbilityLevelSwapped('A6FY', GetAttackedUnitBJ()) > 0 ) ) then
+        return false
+    endif
+    if ( not ( UnitHasBuffBJ(GetAttackedUnitBJ(), 'B65V') == false ) ) then
+        return false
+    endif
+    return true
+endfunction
+
+function Trig_Sila_stai_Actions takes nothing returns nothing
+    if ( Trig_Sila_stai_Func002C() ) then
+        set udg_e31 = GetUnitsOfPlayerAndTypeId(GetOwningPlayer(GetAttacker()), 'e614')
+        call ForGroupBJ( udg_e31, function Trig_Sila_stai_Func002Func002A )
+        call DestroyGroup(udg_e31)
+    else
+    endif
+    if ( Trig_Sila_stai_Func003C() ) then
+        set udg_e31 = GetUnitsOfPlayerAndTypeId(GetOwningPlayer(GetAttacker()), 'o62R')
+        call ForGroupBJ( udg_e31, function Trig_Sila_stai_Func003Func002A )
+        call DestroyGroup(udg_e31)
+    else
+    endif
+    if ( Trig_Sila_stai_Func004C() ) then
+        set udg_e31 = GetUnitsOfPlayerAndTypeId(GetOwningPlayer(GetAttacker()), 'h63I')
+        call ForGroupBJ( udg_e31, function Trig_Sila_stai_Func004Func002A )
+        call DestroyGroup(udg_e31)
+    else
+    endif
+    if ( Trig_Sila_stai_Func005C() ) then
+        set udg_e31 = GetUnitsOfPlayerAndTypeId(GetOwningPlayer(GetAttackedUnitBJ()), 'n623')
+        call ForGroupBJ( udg_e31, function Trig_Sila_stai_Func005Func002A )
+        call DestroyGroup(udg_e31)
+    else
+    endif
+endfunction
+
+//===========================================================================
+function InitTrig_Sila_stai takes nothing returns nothing
+    set gg_trg_Sila_stai = CreateTrigger(  )
+    call TriggerRegisterAnyUnitEventBJ( gg_trg_Sila_stai, EVENT_PLAYER_UNIT_ATTACKED )
+    call TriggerAddCondition( gg_trg_Sila_stai, Condition( function Trig_Sila_stai_Conditions ) )
+    call TriggerAddAction( gg_trg_Sila_stai, function Trig_Sila_stai_Actions )
+endfunction
+
+//===========================================================================
+// Trigger: Sila sta2
+//===========================================================================
+function Trig_Sila_sta2_Func001C takes nothing returns boolean
+    if ( ( GetUnitAbilityLevelSwapped('A6JE', GetAttacker()) < 7 ) ) then
+        return true
+    endif
+    return false
+endfunction
+
+function Trig_Sila_sta2_Conditions takes nothing returns boolean
+    if ( not Trig_Sila_sta2_Func001C() ) then
+        return false
+    endif
+    return true
+endfunction
+
+function Trig_Sila_sta2_Func002C takes nothing returns boolean
+    if ( not ( GetUnitAbilityLevelSwapped('A6JE', GetAttacker()) < 7 ) ) then
+        return false
+    endif
+    if ( not ( UnitHasBuffBJ(GetAttacker(), 'B65V') == true ) ) then
+        return false
+    endif
+    return true
+endfunction
+
+function Trig_Sila_sta2_Func003C takes nothing returns boolean
+    if ( not ( GetUnitAbilityLevelSwapped('A001', GetAttacker()) < 7 ) ) then
+        return false
+    endif
+    if ( not ( UnitHasBuffBJ(GetAttacker(), 'B65V') == true ) ) then
+        return false
+    endif
+    return true
+endfunction
+
+function Trig_Sila_sta2_Func004C takes nothing returns boolean
+    if ( not ( GetUnitAbilityLevelSwapped('A6FX', GetAttacker()) < 7 ) ) then
+        return false
+    endif
+    if ( not ( UnitHasBuffBJ(GetAttacker(), 'B65V') == true ) ) then
+        return false
+    endif
+    return true
+endfunction
+
+function Trig_Sila_sta2_Func005C takes nothing returns boolean
+    if ( not ( GetUnitAbilityLevelSwapped('A6FY', GetAttackedUnitBJ()) < 7 ) ) then
+        return false
+    endif
+    if ( not ( UnitHasBuffBJ(GetAttackedUnitBJ(), 'B65V') == true ) ) then
+        return false
+    endif
+    return true
+endfunction
+
+function Trig_Sila_sta2_Actions takes nothing returns nothing
+    if ( Trig_Sila_sta2_Func002C() ) then
+        call SetUnitAbilityLevelSwapped( 'A6JE', GetAttacker(), 7 )
+    else
+    endif
+    if ( Trig_Sila_sta2_Func003C() ) then
+        call SetUnitAbilityLevelSwapped( 'A001', GetAttacker(), 7 )
+    else
+    endif
+    if ( Trig_Sila_sta2_Func004C() ) then
+        call SetUnitAbilityLevelSwapped( 'A6FX', GetAttacker(), 7 )
+    else
+    endif
+    if ( Trig_Sila_sta2_Func005C() ) then
+        call SetUnitAbilityLevelSwapped( 'A6FY', GetAttackedUnitBJ(), 7 )
+    else
+    endif
+endfunction
+
+//===========================================================================
+function InitTrig_Sila_sta2 takes nothing returns nothing
+    set gg_trg_Sila_sta2 = CreateTrigger(  )
+    call TriggerRegisterAnyUnitEventBJ( gg_trg_Sila_sta2, EVENT_PLAYER_UNIT_ATTACKED )
+    call TriggerAddCondition( gg_trg_Sila_sta2, Condition( function Trig_Sila_sta2_Conditions ) )
+    call TriggerAddAction( gg_trg_Sila_sta2, function Trig_Sila_sta2_Actions )
+endfunction
+
+//===========================================================================
+// Trigger: Riviok
+//===========================================================================
+function Trig_Riviok_Conditions takes nothing returns boolean
+    if ( not ( GetSpellAbilityId() == 'A6P0' ) ) then
+        return false
+    endif
+    if ( not ( GetUnitTypeId(GetSpellAbilityUnit()) == 'H638' ) ) then
+        return false
+    endif
+    return true
+endfunction
+
+function Trig_Riviok_Actions takes nothing returns nothing
+    set udg_Dammy = GetSpellTargetUnit()
+    call TriggerSleepAction( 0.50 )
+    set udg_obnulen_7 = GetUnitLoc(udg_Dammy)
+    call SetUnitPositionLoc( GetSpellAbilityUnit(), udg_obnulen_7 )
+    call CreateNUnitsAtLoc( 1, 'e61T', GetOwningPlayer(GetSpellAbilityUnit()), udg_obnulen_7, bj_UNIT_FACING )
+    call SetUnitAbilityLevelSwapped( 'A6P2', GetLastCreatedUnit(), GetUnitAbilityLevelSwapped(GetSpellAbilityId(), GetSpellAbilityUnit()) )
+    call IssueTargetOrder( GetLastCreatedUnit(), "thunderbolt", udg_Dammy )
+    call RemoveLocation( udg_obnulen_7)
+endfunction
+
+//===========================================================================
+function InitTrig_Riviok takes nothing returns nothing
+    set gg_trg_Riviok = CreateTrigger(  )
+    call TriggerRegisterAnyUnitEventBJ( gg_trg_Riviok, EVENT_PLAYER_UNIT_SPELL_EFFECT )
+    call TriggerAddCondition( gg_trg_Riviok, Condition( function Trig_Riviok_Conditions ) )
+    call TriggerAddAction( gg_trg_Riviok, function Trig_Riviok_Actions )
+endfunction
+
+//===========================================================================
+// Trigger: Riviok1
+//===========================================================================
+function Trig_Riviok1_Conditions takes nothing returns boolean
+    if ( not ( GetSpellAbilityId() == 'A6P0' ) ) then
+        return false
+    endif
+    if ( not ( GetUnitAbilityLevelSwapped('S60E', GetSpellAbilityUnit()) > 0 ) ) then
+        return false
+    endif
+    return true
+endfunction
+
+function Trig_Riviok1_Actions takes nothing returns nothing
+    set udg_Dammy = GetSpellTargetUnit()
+    call TriggerSleepAction( 0.50 )
+    set udg_obnulen_7 = GetUnitLoc(udg_Dammy)
+    call SetUnitPositionLoc( GetSpellAbilityUnit(), udg_obnulen_7 )
+    call CreateNUnitsAtLoc( 1, 'e61T', GetOwningPlayer(GetSpellAbilityUnit()), udg_obnulen_7, bj_UNIT_FACING )
+    call SetUnitAbilityLevelSwapped( 'A6P1', GetLastCreatedUnit(), GetUnitAbilityLevelSwapped(GetSpellAbilityId(), GetSpellAbilityUnit()) )
+    call IssueImmediateOrder( GetLastCreatedUnit(), "fanofknives" )
+    call RemoveLocation( udg_obnulen_7)
+endfunction
+
+//===========================================================================
+function InitTrig_Riviok1 takes nothing returns nothing
+    set gg_trg_Riviok1 = CreateTrigger(  )
+    call TriggerRegisterAnyUnitEventBJ( gg_trg_Riviok1, EVENT_PLAYER_UNIT_SPELL_EFFECT )
+    call TriggerAddCondition( gg_trg_Riviok1, Condition( function Trig_Riviok1_Conditions ) )
+    call TriggerAddAction( gg_trg_Riviok1, function Trig_Riviok1_Actions )
+endfunction
+
+//===========================================================================
+// Trigger: SilaIllidana
+//===========================================================================
+function Trig_SilaIllidana_Conditions takes nothing returns boolean
+    if ( not ( GetUnitAbilityLevelSwapped('A6P4', GetAttacker()) > 0 ) ) then
+        return false
+    endif
+    return true
+endfunction
+
+function Trig_SilaIllidana_Func003Func003C takes nothing returns boolean
+    if ( not ( udg_randomelekcir == 1 ) ) then
+        return false
+    endif
+    return true
+endfunction
+
+function Trig_SilaIllidana_Func003C takes nothing returns boolean
+    if ( not ( GetUnitAbilityLevelSwapped('A6P4', GetAttacker()) == 1 ) ) then
+        return false
+    endif
+    return true
+endfunction
+
+function Trig_SilaIllidana_Func004Func003C takes nothing returns boolean
+    if ( not ( udg_randomelekcir == 1 ) ) then
+        return false
+    endif
+    return true
+endfunction
+
+function Trig_SilaIllidana_Func004C takes nothing returns boolean
+    if ( not ( GetUnitAbilityLevelSwapped('A6P4', GetAttacker()) == 2 ) ) then
+        return false
+    endif
+    return true
+endfunction
+
+function Trig_SilaIllidana_Func005Func003C takes nothing returns boolean
+    if ( not ( udg_randomelekcir == 1 ) ) then
+        return false
+    endif
+    return true
+endfunction
+
+function Trig_SilaIllidana_Func005C takes nothing returns boolean
+    if ( not ( GetUnitAbilityLevelSwapped('A6P4', GetAttacker()) == 3 ) ) then
+        return false
+    endif
+    return true
+endfunction
+
+function Trig_SilaIllidana_Actions takes nothing returns nothing
+    if ( Trig_SilaIllidana_Func003C() ) then
+        set udg_randomelekcir = GetRandomInt(1, 20)
+        if ( Trig_SilaIllidana_Func003Func003C() ) then
+            set udg_obnulen_7 = GetUnitLoc(GetSpellAbilityUnit())
+            call CreateNUnitsAtLoc( 1, 'e61T', GetOwningPlayer(GetAttacker()), udg_obnulen_7, bj_UNIT_FACING )
+            call IssueTargetOrder( GetLastCreatedUnit(), "bloodlust", GetAttacker() )
+            call RemoveLocation( udg_obnulen_7)
+        else
+        endif
+    else
+    endif
+    if ( Trig_SilaIllidana_Func004C() ) then
+        set udg_randomelekcir = GetRandomInt(1, 10)
+        if ( Trig_SilaIllidana_Func004Func003C() ) then
+            set udg_obnulen_7 = GetUnitLoc(GetSpellAbilityUnit())
+            call CreateNUnitsAtLoc( 1, 'e61T', GetOwningPlayer(GetAttacker()), udg_obnulen_7, bj_UNIT_FACING )
+            call IssueTargetOrder( GetLastCreatedUnit(), "bloodlust", GetAttacker() )
+            call RemoveLocation( udg_obnulen_7)
+        else
+        endif
+    else
+    endif
+    if ( Trig_SilaIllidana_Func005C() ) then
+        set udg_randomelekcir = GetRandomInt(1, 8)
+        if ( Trig_SilaIllidana_Func005Func003C() ) then
+            set udg_obnulen_7 = GetUnitLoc(GetSpellAbilityUnit())
+            call CreateNUnitsAtLoc( 1, 'e61T', GetOwningPlayer(GetAttacker()), udg_obnulen_7, bj_UNIT_FACING )
+            call IssueTargetOrder( GetLastCreatedUnit(), "bloodlust", GetAttacker() )
+            call RemoveLocation( udg_obnulen_7)
+        else
+        endif
+    else
+    endif
+endfunction
+
+//===========================================================================
+function InitTrig_SilaIllidana takes nothing returns nothing
+    set gg_trg_SilaIllidana = CreateTrigger(  )
+    call TriggerRegisterAnyUnitEventBJ( gg_trg_SilaIllidana, EVENT_PLAYER_UNIT_ATTACKED )
+    call TriggerAddCondition( gg_trg_SilaIllidana, Condition( function Trig_SilaIllidana_Conditions ) )
+    call TriggerAddAction( gg_trg_SilaIllidana, function Trig_SilaIllidana_Actions )
+endfunction
+
+//===========================================================================
+// Trigger: kotrohan
+//===========================================================================
+function Trig_kotrohan_Conditions takes nothing returns boolean
+    if ( not ( GetSpellAbilityId() == 'A6P5' ) ) then
+        return false
+    endif
+    return true
+endfunction
+
+function Trig_kotrohan_Func002Func003002003001 takes nothing returns boolean
+    return ( UnitHasBuffBJ(GetFilterUnit(), 'B65Y') == true )
+endfunction
+
+function Trig_kotrohan_Func002Func003002003002 takes nothing returns boolean
+    return ( IsUnitEnemy(GetFilterUnit(), GetOwningPlayer(GetSpellAbilityUnit())) == true )
+endfunction
+
+function Trig_kotrohan_Func002Func003002003 takes nothing returns boolean
+    return GetBooleanAnd( Trig_kotrohan_Func002Func003002003001(), Trig_kotrohan_Func002Func003002003002() )
+endfunction
+
+function Trig_kotrohan_Func002Func004A takes nothing returns nothing
+    call SetUnitManaBJ( GetEnumUnit(), ( GetUnitStateSwap(UNIT_STATE_MANA, GetEnumUnit()) - 50.00 ) )
+endfunction
+
+function Trig_kotrohan_Func002C takes nothing returns boolean
+    if ( not ( GetUnitAbilityLevelSwapped(GetSpellAbilityId(), GetSpellAbilityUnit()) == 1 ) ) then
+        return false
+    endif
+    return true
+endfunction
+
+function Trig_kotrohan_Func003Func003002003001 takes nothing returns boolean
+    return ( UnitHasBuffBJ(GetFilterUnit(), 'B65Z') == true )
+endfunction
+
+function Trig_kotrohan_Func003Func003002003002 takes nothing returns boolean
+    return ( IsUnitEnemy(GetFilterUnit(), GetOwningPlayer(GetSpellAbilityUnit())) == true )
+endfunction
+
+function Trig_kotrohan_Func003Func003002003 takes nothing returns boolean
+    return GetBooleanAnd( Trig_kotrohan_Func003Func003002003001(), Trig_kotrohan_Func003Func003002003002() )
+endfunction
+
+function Trig_kotrohan_Func003Func004A takes nothing returns nothing
+    call SetUnitManaBJ( GetEnumUnit(), ( GetUnitStateSwap(UNIT_STATE_MANA, GetEnumUnit()) - 90.00 ) )
+endfunction
+
+function Trig_kotrohan_Func003C takes nothing returns boolean
+    if ( not ( GetUnitAbilityLevelSwapped(GetSpellAbilityId(), GetSpellAbilityUnit()) == 2 ) ) then
+        return false
+    endif
+    return true
+endfunction
+
+function Trig_kotrohan_Func004Func003002003001 takes nothing returns boolean
+    return ( UnitHasBuffBJ(GetFilterUnit(), 'B660') == true )
+endfunction
+
+function Trig_kotrohan_Func004Func003002003002 takes nothing returns boolean
+    return ( IsUnitEnemy(GetFilterUnit(), GetOwningPlayer(GetSpellAbilityUnit())) == true )
+endfunction
+
+function Trig_kotrohan_Func004Func003002003 takes nothing returns boolean
+    return GetBooleanAnd( Trig_kotrohan_Func004Func003002003001(), Trig_kotrohan_Func004Func003002003002() )
+endfunction
+
+function Trig_kotrohan_Func004Func004A takes nothing returns nothing
+    call SetUnitManaBJ( GetEnumUnit(), ( GetUnitStateSwap(UNIT_STATE_MANA, GetEnumUnit()) - 130.00 ) )
+endfunction
+
+function Trig_kotrohan_Func004C takes nothing returns boolean
+    if ( not ( GetUnitAbilityLevelSwapped(GetSpellAbilityId(), GetSpellAbilityUnit()) == 3 ) ) then
+        return false
+    endif
+    return true
+endfunction
+
+function Trig_kotrohan_Actions takes nothing returns nothing
+    if ( Trig_kotrohan_Func002C() ) then
+        set udg_obnulen_8 = GetUnitLoc(GetSpellAbilityUnit())
+        set udg_eq2 = GetUnitsInRangeOfLocMatching(1000.00, udg_obnulen_8, Condition(function Trig_kotrohan_Func002Func003002003))
+        call ForGroupBJ( udg_eq2, function Trig_kotrohan_Func002Func004A )
+        call RemoveLocation( udg_obnulen_8)
+        call DestroyGroup(udg_eq2)
+    else
+    endif
+    if ( Trig_kotrohan_Func003C() ) then
+        set udg_obnulen_8 = GetUnitLoc(GetSpellAbilityUnit())
+        set udg_eq2 = GetUnitsInRangeOfLocMatching(1000.00, udg_obnulen_8, Condition(function Trig_kotrohan_Func003Func003002003))
+        call ForGroupBJ( udg_eq2, function Trig_kotrohan_Func003Func004A )
+        call RemoveLocation( udg_obnulen_8)
+        call DestroyGroup(udg_eq2)
+    else
+    endif
+    if ( Trig_kotrohan_Func004C() ) then
+        set udg_obnulen_8 = GetUnitLoc(GetSpellAbilityUnit())
+        set udg_eq2 = GetUnitsInRangeOfLocMatching(1000.00, udg_obnulen_8, Condition(function Trig_kotrohan_Func004Func003002003))
+        call ForGroupBJ( udg_eq2, function Trig_kotrohan_Func004Func004A )
+        call RemoveLocation( udg_obnulen_8)
+        call DestroyGroup(udg_eq2)
+    else
+    endif
+endfunction
+
+//===========================================================================
+function InitTrig_kotrohan takes nothing returns nothing
+    set gg_trg_kotrohan = CreateTrigger(  )
+    call TriggerRegisterAnyUnitEventBJ( gg_trg_kotrohan, EVENT_PLAYER_UNIT_SPELL_FINISH )
+    call TriggerAddCondition( gg_trg_kotrohan, Condition( function Trig_kotrohan_Conditions ) )
+    call TriggerAddAction( gg_trg_kotrohan, function Trig_kotrohan_Actions )
+endfunction
+
+//===========================================================================
+// Trigger: silaStihi445
+//===========================================================================
+function Trig_silaStihi445_Conditions takes nothing returns boolean
+    if ( not ( GetSpellAbilityId() == 'A6P6' ) ) then
+        return false
+    endif
+    return true
+endfunction
+
+function Trig_silaStihi445_Func001Func003002002 takes nothing returns boolean
+    return ( IsUnitType(GetFilterUnit(), UNIT_TYPE_MECHANICAL) == true )
+endfunction
+
+function Trig_silaStihi445_Func001Func004Func002A takes nothing returns nothing
+    call CreateNUnitsAtLoc( 1, 'e61T', GetOwningPlayer(GetSpellAbilityUnit()), udg_obnulen_7, bj_UNIT_FACING )
+    call SetUnitAbilityLevelSwapped( 'A6P7', GetLastCreatedUnit(), ( 1 + CountUnitsInGroup(udg_e29) ) )
+    call IssueTargetOrder( GetLastCreatedUnit(), "innerfire", GetSpellAbilityUnit() )
+endfunction
+
+function Trig_silaStihi445_Func001Func004A takes nothing returns nothing
+    set udg_e29 = GetRandomSubGroup(9, udg_e21)
+    call ForGroupBJ( udg_e29, function Trig_silaStihi445_Func001Func004Func002A )
+    call DestroyGroup(udg_e29)
+endfunction
+
+function Trig_silaStihi445_Func001C takes nothing returns boolean
+    if ( not ( GetSpellAbilityId() == 'A6P6' ) ) then
+        return false
+    endif
+    return true
+endfunction
+
+function Trig_silaStihi445_Actions takes nothing returns nothing
+    if ( Trig_silaStihi445_Func001C() ) then
+        set udg_obnulen_7 = GetUnitLoc(GetSpellAbilityUnit())
+        set udg_e21 = GetUnitsOfPlayerMatching(GetOwningPlayer(GetSpellAbilityUnit()), Condition(function Trig_silaStihi445_Func001Func003002002))
+        call ForGroupBJ( udg_e21, function Trig_silaStihi445_Func001Func004A )
+        call RemoveLocation( udg_obnulen_7)
+        call DestroyGroup(udg_e21)
+    else
+    endif
+endfunction
+
+//===========================================================================
+function InitTrig_silaStihi445 takes nothing returns nothing
+    set gg_trg_silaStihi445 = CreateTrigger(  )
+    call TriggerRegisterAnyUnitEventBJ( gg_trg_silaStihi445, EVENT_PLAYER_UNIT_SPELL_EFFECT )
+    call TriggerAddCondition( gg_trg_silaStihi445, Condition( function Trig_silaStihi445_Conditions ) )
+    call TriggerAddAction( gg_trg_silaStihi445, function Trig_silaStihi445_Actions )
+endfunction
+
+//===========================================================================
+// Trigger: smenacmen
+//===========================================================================
+function Trig_smenacmen_Func001A takes nothing returns nothing
+    set udg_obnulen_7 = GetPlayerStartLocationLoc(GetEnumPlayer())
+    call CreateNUnitsAtLoc( 1, 'e61V', GetEnumPlayer(), udg_obnulen_7, bj_UNIT_FACING )
+    call RemoveLocation( udg_obnulen_7)
+endfunction
+
+function Trig_smenacmen_Actions takes nothing returns nothing
+    call ForForce( GetPlayersAll(), function Trig_smenacmen_Func001A )
+endfunction
+
+//===========================================================================
+function InitTrig_smenacmen takes nothing returns nothing
+    set gg_trg_smenacmen = CreateTrigger(  )
+    call TriggerRegisterTimerEventSingle( gg_trg_smenacmen, 2.00 )
+    call TriggerAddAction( gg_trg_smenacmen, function Trig_smenacmen_Actions )
+endfunction
 
 //===========================================================================
 //
@@ -9960,13 +11363,15 @@ function MeleeStartingHeroLimit takes nothing returns nothing
         call ReducePlayerTechMaxAllowed(Player(index), 'E60B', bj_MELEE_HERO_TYPE_LIMIT)
         
         call ReducePlayerTechMaxAllowed(Player(index), 'H602', bj_MELEE_HERO_TYPE_LIMIT)
-
-        call ReducePlayerTechMaxAllowed(Player(index), 'N61E', bj_MELEE_HERO_TYPE_LIMIT)
+		
+		//===========================================================================
+        // ** Герои гоблинов **
+		call ReducePlayerTechMaxAllowed(Player(index), 'N61E', bj_MELEE_HERO_TYPE_LIMIT)
         call ReducePlayerTechMaxAllowed(Player(index), 'N61D', bj_MELEE_HERO_TYPE_LIMIT)
-		call ReducePlayerTechMaxAllowed(Player(index), 'N63W', bj_MELEE_HERO_TYPE_LIMIT)
+		call ReducePlayerTechMaxAllowed(Player(index), 'N65E', bj_MELEE_HERO_TYPE_LIMIT)
         call ReducePlayerTechMaxAllowed(Player(index), 'N63Z', bj_MELEE_HERO_TYPE_LIMIT)
-
-        //===========================================================================
+		
+		//===========================================================================
         // ** Герои высших эльфов **
         call ReducePlayerTechMaxAllowed(Player(index), 'H63A', bj_MELEE_HERO_TYPE_LIMIT)
         call ReducePlayerTechMaxAllowed(Player(index), 'H639', bj_MELEE_HERO_TYPE_LIMIT)
@@ -9983,20 +11388,23 @@ function MeleeStartingHeroLimit takes nothing returns nothing
         call ReducePlayerTechMaxAllowed(Player(index), 'E60Y', bj_MELEE_HERO_TYPE_LIMIT)
 
         call ReducePlayerTechMaxAllowed(Player(index), 'H64D', bj_MELEE_HERO_TYPE_LIMIT)
-		call ReducePlayerTechMaxAllowed(Player(index), 'U60G', bj_MELEE_HERO_TYPE_LIMIT)
 		call ReducePlayerTechMaxAllowed(Player(index), 'U604', bj_MELEE_HERO_TYPE_LIMIT)
-		
-		call ReducePlayerTechMaxAllowed(Player(index), 'N638', bj_MELEE_HERO_TYPE_LIMIT)
+	
 		call ReducePlayerTechMaxAllowed(Player(index), 'H64Q', bj_MELEE_HERO_TYPE_LIMIT)
 		
 		call ReducePlayerTechMaxAllowed(Player(index), 'H64S', bj_MELEE_HERO_TYPE_LIMIT)
 
         //===========================================================================
         // ** Герои Демонов **
+		// Владыка бездны
         call ReducePlayerTechMaxAllowed(Player(index), 'U60G', bj_MELEE_HERO_TYPE_LIMIT)
+		// Лидер Легиона
         call ReducePlayerTechMaxAllowed(Player(index), 'N63G', bj_MELEE_HERO_TYPE_LIMIT)
+		// Госпожа страданий
         call ReducePlayerTechMaxAllowed(Player(index), 'H64E', bj_MELEE_HERO_TYPE_LIMIT)
+		// Разрушитель
         call ReducePlayerTechMaxAllowed(Player(index), 'N63H', bj_MELEE_HERO_TYPE_LIMIT)
+		// Дьявол
         call ReducePlayerTechMaxAllowed(Player(index), 'U60S', bj_MELEE_HERO_TYPE_LIMIT)
 
         //===========================================================================
@@ -10034,7 +11442,6 @@ function MeleeStartingHeroLimit takes nothing returns nothing
         // ** Герои Нерубов **
         call ReducePlayerTechMaxAllowed(Player(index), 'U604', bj_MELEE_HERO_TYPE_LIMIT)
         call ReducePlayerTechMaxAllowed(Player(index), 'H64U', bj_MELEE_HERO_TYPE_LIMIT)
-        call ReducePlayerTechMaxAllowed(Player(index), 'N63F', bj_MELEE_HERO_TYPE_LIMIT)
         call ReducePlayerTechMaxAllowed(Player(index), 'U61L', bj_MELEE_HERO_TYPE_LIMIT)
 
         //**Рыцарь смерти **
@@ -10048,6 +11455,8 @@ function MeleeStartingHeroLimit takes nothing returns nothing
         call ReducePlayerTechMaxAllowed(Player(index), 'H64Y', bj_MELEE_HERO_TYPE_LIMIT)
         // Царь-лич
         call ReducePlayerTechMaxAllowed(Player(index), 'U61I', bj_MELEE_HERO_TYPE_LIMIT)
+        // Лорд Бездны
+        call ReducePlayerTechMaxAllowed(Player(index), 'N63F', bj_MELEE_HERO_TYPE_LIMIT)
 
 		//===========================================================================
         // ** Новые герои **
@@ -10057,6 +11466,10 @@ function MeleeStartingHeroLimit takes nothing returns nothing
 		call ReducePlayerTechMaxAllowed(Player(index), 'H64X', bj_MELEE_HERO_TYPE_LIMIT)
         // Гоблин пулеметчик
         call ReducePlayerTechMaxAllowed(Player(index), 'N64S', bj_MELEE_HERO_TYPE_LIMIT)
+        // Гнолл-механик
+        call ReducePlayerTechMaxAllowed(Player(index), 'N638', bj_MELEE_HERO_TYPE_LIMIT)
+        // Теневой ассасин
+        call ReducePlayerTechMaxAllowed(Player(index), 'H643', bj_MELEE_HERO_TYPE_LIMIT)
 
         //===========================================================================
 
@@ -10683,7 +12096,7 @@ function MeleeStartingUnitsNaga takes player whichPlayer, location startLoc, boo
         // If the "Random Hero" option is set, start the player with a random hero.
         // Otherwise, give them a "free hero" token.
         if useRandomHero then
-            call MeleeRandomHeroLoc(whichPlayer, 'H63F', 'H63G', 'H63E', 'E60Z', heroLoc)
+            call MeleeRandomHeroLoc(whichPlayer, 'H63F', 'H63G', 'H63E', 'H64X', heroLoc)
         else
             call SetPlayerState(whichPlayer, PLAYER_STATE_RESOURCE_HERO_TOKENS, bj_MELEE_STARTING_HERO_TOKENS)
         endif
@@ -10750,7 +12163,7 @@ function MeleeStartingUnitsDwarven takes player whichPlayer, location startLoc, 
         // If the "Random Hero" option is set, start the player with a random hero.
         // Otherwise, give them a "free hero" token.
         if useRandomHero then
-            call MeleeRandomHeroLoc(whichPlayer, 'H601', 'H602', 'H64S', 'H600', heroLoc)
+            call MeleeRandomHeroLoc(whichPlayer, 'H601', 'H602', 'H600', null, heroLoc)
         else
             call SetPlayerState(whichPlayer, PLAYER_STATE_RESOURCE_HERO_TOKENS, bj_MELEE_STARTING_HERO_TOKENS)
         endif
@@ -10817,7 +12230,7 @@ function MeleeStartingUnitsDarkOrc takes player whichPlayer, location startLoc, 
         // If the "Random Hero" option is set, start the player with a random hero.
         // Otherwise, give them a "free hero" token.
         if useRandomHero then
-            call MeleeRandomHeroLoc(whichPlayer, 'O61S', 'O61U', 'O61W', 'O61W', heroLoc)
+            call MeleeRandomHeroLoc(whichPlayer, 'O61S', 'O61U', 'O61W', 'O644', heroLoc)
         else
             call SetPlayerState(whichPlayer, PLAYER_STATE_RESOURCE_HERO_TOKENS, bj_MELEE_STARTING_HERO_TOKENS)
         endif
@@ -10884,7 +12297,7 @@ function MeleeStartingUnitsIceTrolls takes player whichPlayer, location startLoc
         // If the "Random Hero" option is set, start the player with a random hero.
         // Otherwise, give them a "free hero" token.
         if useRandomHero then
-            call MeleeRandomHeroLoc(whichPlayer, 'O61Q', 'O61R', 'O61T', 'O61T', heroLoc)
+            call MeleeRandomHeroLoc(whichPlayer, 'O61Q', 'O61R', 'O61T', null, heroLoc)
         else
             call SetPlayerState(whichPlayer, PLAYER_STATE_RESOURCE_HERO_TOKENS, bj_MELEE_STARTING_HERO_TOKENS)
         endif
@@ -11152,7 +12565,7 @@ function MeleeStartingUnitsGoblin takes player whichPlayer, location startLoc, b
         // If the "Random Hero" option is set, start the player with a random hero.
         // Otherwise, give them a "free hero" token.
         if useRandomHero then
-            call MeleeRandomHeroLoc(whichPlayer, 'N61E', 'N61D', 'N63Z', 'N63W', heroLoc)
+            call MeleeRandomHeroLoc(whichPlayer, 'N61E', 'N61D', 'N63Z', 'N65E', heroLoc)
         else
             call SetPlayerState(whichPlayer, PLAYER_STATE_RESOURCE_HERO_TOKENS, bj_MELEE_STARTING_HERO_TOKENS)
         endif
@@ -11427,7 +12840,7 @@ function MeleeStartingUnitsGnoll takes player whichPlayer, location startLoc, bo
         // If the "Random Hero" option is set, start the player with a random hero.
         // Otherwise, give them a "free hero" token.
         if useRandomHero then
-            call MeleeRandomHeroLoc(whichPlayer, 'H641', 'O643', 'E60Y', null, heroLoc)
+            call MeleeRandomHeroLoc(whichPlayer, 'H643', 'O643', 'E60Y', 'N638', heroLoc)
         else
             call SetPlayerState(whichPlayer, PLAYER_STATE_RESOURCE_HERO_TOKENS, bj_MELEE_STARTING_HERO_TOKENS)
         endif
@@ -13108,6 +14521,11 @@ function InitSummonableCaps takes nothing returns nothing
         if (not GetPlayerTechResearched(Player(index), 'R64D', true)) then
             call SetPlayerTechMaxAllowed(Player(index), 'e60X', 0)
         endif
+		
+		 // Улучшение легионера
+        if (not GetPlayerTechResearched(Player(index), 'R670', true)) then
+            call SetPlayerTechMaxAllowed(Player(index), 'n65C', 0)
+        endif
 
         // max skeletons per player
         call SetPlayerTechMaxAllowed(Player(index), 'uske', bj_MAX_SKELETONS)
@@ -13316,7 +14734,27 @@ function InitMM_Engine takes nothing returns nothing
     call InitTrig_silaStihi4(  )
     call InitTrig_prizivelema2(  )
 
-    
+    call InitTrig_sytelimaga2(  )
+    call InitTrig_sytelimaga3(  )
+    call InitTrig_Rtibek(  )
+    call InitTrig_Hronoluc(  )
+    call InitTrig_sytelimaga4(  )
+    call InitTrig_Prizivlida(  )
+    call InitTrig_racanie(  )
+    call InitTrig_sposoohdik(  )
+    call InitTrig_obnulbaff2(  )
+    call InitTrig_Silaohotnika(  )
+    call InitTrig_racanie2(  )
+    call InitTrig_Hans_na_granat(  )
+    call InitTrig_Hans_na_granat2(  )
+    call InitTrig_Sila_stai(  )
+    call InitTrig_Sila_sta2(  )
+    call InitTrig_Riviok(  )
+    call InitTrig_Riviok1(  )
+    call InitTrig_SilaIllidana(  )
+    call InitTrig_kotrohan(  )
+    call InitTrig_silaStihi445(  )
+    call InitTrig_smenacmen(  )
 
 
 
