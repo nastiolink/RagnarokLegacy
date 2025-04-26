@@ -10,6 +10,7 @@ Each added faction has AI. The add-on is powered by the MM Engine:
 https://github.com/Ev3nt/MM-Engine
 MME allows you to create our unrivaled client game. Compatible game version: 1.26a.
 You can play online via LAN using a LAN emulator. Only russian language support.
+This project is written in [Jass](https://www.hiveworkshop.com/threads/jass-newgen-pack.115679/), the scripting language used for Warcraft III modding.
 
 Official site: https://sites.google.com/view/wcragnaroklegacy/Home
 
@@ -49,7 +50,7 @@ Russian
 Дополнение добавляет в игру множество новых фракций. Проект работает на движке MM Еngine:
 https://github.com/Ev3nt/MM-Engine
 Модификация включает в себя добавление новых рас, внесение правок в баланс, визуальную часть а также добавление нового контента в режим сражений.
-Играть онлайн можно через локальную сеть, используя эмулятор локальной сети. Проект поддерживается только на русском языке.
+Играть онлайн можно через локальную сеть, используя эмулятор локальной сети. Проект поддерживается только на русском языке. Этот проект написан на [Jass](https://www.hiveworkshop.com/threads/jass-newgen-pack.115679/), скриптовом языке, используемом для создания модов для Warcraft III.
 
 Официальный сайт: https://sites.google.com/view/wcragnaroklegacy/Home
 
@@ -104,7 +105,7 @@ Linux:
 
 ВК: https://vk.com/war3ragnarok
 
-Telegram: https://t.me/ragnaroklegacy
+Telegram: https://t.me/wc3ragnaroklegacy
 
 Как часто выходят обновления?
 
