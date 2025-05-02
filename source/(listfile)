@@ -324,6 +324,7 @@ ReplaceableTextures\CommandButtons\BTNAbility_DarkRitual_Murloc.blp
 ReplaceableTextures\CommandButtons\BTNAbility_DarkSphere.blp
 ReplaceableTextures\CommandButtons\BTNAbility_DarkTouch.blp
 ReplaceableTextures\CommandButtons\BTNAbility_DarkVision.blp
+ReplaceableTextures\CommandButtons\BTNAbility_dead_bow.blp
 ReplaceableTextures\CommandButtons\BTNAbility_death_aura.blp
 ReplaceableTextures\CommandButtons\BTNAbility_DefendOffPurple.blp
 ReplaceableTextures\CommandButtons\BTNAbility_DefendOnPurple.blp
@@ -796,6 +797,7 @@ ReplaceableTextures\CommandButtons\BTNDemon_bulwark_bastion_tier1.blp
 ReplaceableTextures\CommandButtons\BTNDemon_bulwark_bastion_tier2.blp
 ReplaceableTextures\CommandButtons\BTNDemon_chaos_warlock_archer.blp
 ReplaceableTextures\CommandButtons\BTNDemon_dread_book.blp
+ReplaceableTextures\CommandButtons\BTNDemon_fire_worker.blp
 ReplaceableTextures\CommandButtons\BTNDemon_haunted_mine.blp
 ReplaceableTextures\CommandButtons\BTNDemon_melee1.blp
 ReplaceableTextures\CommandButtons\BTNDemon_melee2.blp
@@ -2448,6 +2450,7 @@ ReplaceableTextures\CommandButtonsDisabled\DISBTNAbility_DarkRitual_Murloc.blp
 ReplaceableTextures\CommandButtonsDisabled\DISBTNAbility_DarkSphere.blp
 ReplaceableTextures\CommandButtonsDisabled\DISBTNAbility_DarkTouch.blp
 ReplaceableTextures\CommandButtonsDisabled\DISBTNAbility_DarkVision.blp
+ReplaceableTextures\CommandButtonsDisabled\DISBTNAbility_dead_bow.blp
 ReplaceableTextures\CommandButtonsDisabled\DISBTNAbility_death_aura.blp
 ReplaceableTextures\CommandButtonsDisabled\DISBTNAbility_DefendOffPurple.blp
 ReplaceableTextures\CommandButtonsDisabled\DISBTNAbility_DefendOnPurple.blp
@@ -2498,6 +2501,7 @@ ReplaceableTextures\CommandButtonsDisabled\DISBTNAbility_LightningShockwave.blp
 ReplaceableTextures\CommandButtonsDisabled\DISBTNAbility_magic_aura.blp
 ReplaceableTextures\CommandButtonsDisabled\DISBTNAbility_magic_missile2.blp
 ReplaceableTextures\CommandButtonsDisabled\DISBTNAbility_magic_missile_blue.blp
+ReplaceableTextures\CommandButtonsDisabled\DISBTNAbility_magic_missiles.blp
 ReplaceableTextures\CommandButtonsDisabled\DISBTNAbility_MagicBeamAttack.blp
 ReplaceableTextures\CommandButtonsDisabled\DISBTNAbility_Magocracy.blp
 ReplaceableTextures\CommandButtonsDisabled\DISBTNAbility_ManaBreathe.blp
@@ -2920,6 +2924,7 @@ ReplaceableTextures\CommandButtonsDisabled\DISBTNDemon_bulwark_bastion_tier1.blp
 ReplaceableTextures\CommandButtonsDisabled\DISBTNDemon_bulwark_bastion_tier2.blp
 ReplaceableTextures\CommandButtonsDisabled\DISBTNDemon_chaos_warlock_archer.blp
 ReplaceableTextures\CommandButtonsDisabled\DISBTNDemon_dread_book.blp
+ReplaceableTextures\CommandButtonsDisabled\DISBTNDemon_fire_worker.blp
 ReplaceableTextures\CommandButtonsDisabled\DISBTNDemon_haunted_mine.blp
 ReplaceableTextures\CommandButtonsDisabled\DISBTNDemon_melee1.blp
 ReplaceableTextures\CommandButtonsDisabled\DISBTNDemon_melee2.blp
@@ -3887,7 +3892,6 @@ ReplaceableTextures\CommandButtonsDisabled\DISBTNLostOneStash.blp
 ReplaceableTextures\CommandButtonsDisabled\DISBTNLostOneStrongHold.blp
 ReplaceableTextures\CommandButtonsDisabled\DISBTNLostOneTempleOfInsight.blp
 ReplaceableTextures\CommandButtonsDisabled\DISBTNLostOneTower.blp
-ReplaceableTextures\CommandButtonsDisabled\DISBTNMagic_Missiles.blp
 ReplaceableTextures\CommandButtonsDisabled\DISBTNMagicalSentry2.blp
 ReplaceableTextures\CommandButtonsDisabled\DISBTNMagicalSentry3.blp
 ReplaceableTextures\CommandButtonsDisabled\DISBTNMagicImmunity2.blp
@@ -5157,6 +5161,7 @@ Textures\Ghost2.blp
 Textures\GnollGeomancer.blp
 Textures\GnollShared.blp
 Textures\GnollSlasher.blp
+Textures\Gold.blp
 Textures\Goldmine.blp
 Textures\GreySatyr.blp
 Textures\HE_armorpads.blp
@@ -5180,6 +5185,7 @@ Textures\OrangePriestessOfTheMoon.blp
 Textures\purpleclean.blp
 Textures\rainbowlenseflare.blp
 Textures\rainTail.blp
+Textures\Ribbon.blp
 Textures\Rune.blp
 Textures\Satyr-Dushekrad.blp
 Textures\Satyr-SpearThrower.blp
@@ -5191,18 +5197,22 @@ Textures\SatyrFamUnits.blp
 Textures\SatyrGlaiveThrower.blp
 Textures\SatyrHellCaller.blp
 Textures\Sentinel.blp
+Textures\ShadowCircle.blp
 Textures\Shink1.blp
 Textures\Shink2.blp
 Textures\shockwave01_bw.blp
 Textures\ShockwaveWater1.blp
 Textures\smoke_bw.blp
+Textures\SmokeBlack.blp
 Textures\snowflake.blp
 Textures\SoulCalibur.blp
 Textures\SwoedAndAxeSatyr.blp
 Textures\SwoedAndAxeSatyr2.blp
 Textures\Tail_Dust.blp
+Textures\Terrain.blp
 Textures\Texture_GrayArmor.blp
 Textures\Texture_GraySword2.6.blp
+Textures\Treasurechest.blp
 Textures\TrollBarbarian.blp
 Textures\Void_LightningBall.blp
 Textures\VoidZap1.blp
@@ -5633,6 +5643,7 @@ war3campImported\Ability_Azul Arrow Defrosted.mdx
 war3campImported\Ability_Azul Arrow.mdx
 war3campImported\Ability_Blizzard.mdx
 war3campImported\Ability_Bloodstone Arrow.mdx
+war3campImported\Ability_comet_storm.mdx
 war3campImported\Ability_cone_of_cold.mdx
 war3campImported\Ability_CullingSlash.mdx
 war3campImported\Ability_DarknessRising.mdx
@@ -6477,6 +6488,7 @@ war3campImported\Forsaken_wretched_swordsman (other_unit)_Portrait.mdx
 war3campImported\Forsaken_wretched_war_mage (other_unit).mdx
 war3campImported\Forsaken_wretched_worker (other_unit).mdx
 war3campImported\Forsaken_wrethced_mage (other_unit).mdx
+war3campImported\Gnoll_ability_megakill.mdx
 war3campImported\Gnoll_altar_of_fangs (altar).mdx
 war3campImported\Gnoll_camp (town_hall).mdx
 war3campImported\Gnoll_elemental_grove (mage_barracks).mdx
@@ -6713,6 +6725,7 @@ war3campImported\IceTroll_Slayer.mdx
 war3campImported\IceTroll_Slayer_Portrait.mdx
 war3campImported\IceTroll_spirit_lodge (mage_barracks).mdx
 war3campImported\IceTroll_totem (elite_barracks).mdx
+war3campImported\IceTroll_unit_yeti.mdx
 war3campImported\IceTroll_voodoo_lounge (marketplace).mdx
 war3campImported\IceTroll_watch_tower (tower).mdx
 war3campImported\IceTroll_Wolfrider.mdx
@@ -6772,6 +6785,7 @@ war3campImported\KirinTor_tower (tower).mdx
 war3campImported\KirinTor_town_hall.mdx
 war3campImported\KirinTor_violet_citadel (town_hall).mdx
 war3campImported\KirinTor_workshop.mdx
+war3campImported\Lizardman_ability_sacred_shield.mdx
 war3campImported\Lizardman_altar (altar).mdx
 war3campImported\Lizardman_archer.mdx
 war3campImported\Lizardman_archer_v2.mdx

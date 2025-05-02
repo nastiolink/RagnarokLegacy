@@ -9602,6 +9602,7 @@ endfunction
 
 //===========================================================================
 // Trigger: sytelimaga4
+// Холоднорождённая: Ледяной веер
 //===========================================================================
 function Trig_sytelimaga4_Conditions takes nothing returns boolean
     if ( not ( GetSpellAbilityId() == 'A6OE' ) ) then

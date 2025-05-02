@@ -1216,7 +1216,7 @@ CommandStop=ReplaceableTextures\CommandButtons\BTNDemonStop.blp
 CommandRally=ReplaceableTextures\CommandButtons\BTNOrcRallyPoint.blp
 RallyIndicatorDst=UI\Feedback\RallyPoint\Demon_RallyPoint.mdl
 WaypointIndicator=UI\Feedback\WaypointFlags\OrcWaypointFlag.mdl
-IdlePeon=ReplaceableTextures\CommandButtons\BTNDemons_worker_v1.blp
+IdlePeon=ReplaceableTextures\CommandButtons\BTNDemon_fire_worker.blp
 PlacementCursor=ReplaceableTextures\Selection\SpellAreaOfEffect_Orc.blp
 
 CinematicBorder=UI\Widgets\EscMenu\Orc\orc-cinematic-border.blp
