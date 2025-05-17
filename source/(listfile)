@@ -6961,3 +6961,6 @@ ReplaceableTextures\CommandButtonsDisabled\DISBTNDemon_fire_worker.blp
 war3campImported\Ability_comet_storm.mdx
 war3campImported\IceTroll_unit_yeti.mdx
 war3campImported\Gnoll_ability_megakill.mdx
+ReplaceableTextures\CommandButtons\BTNGoblin_hero_arena_champion.blp
+ReplaceableTextures\CommandButtonsDisabled\DISBTNGoblin_hero_arena_champion.blp
+UI\Glues\ScoreScreen\SSCGoblin_hero_arena_champion.blp
