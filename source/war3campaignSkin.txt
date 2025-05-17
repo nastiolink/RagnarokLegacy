@@ -1,0 +1,7 @@
+[CustomSkin]
+CommandStop=ReplaceableTextures\CommandButtons\BTNAll_Stop.blp
+CommandAttack=ReplaceableTextures\CommandButtons\BTNAll_ack.blp
+CommandHoldPosition=ReplaceableTextures\CommandButtons\BTNAll_HoldPosition.blp
+CommandRally=ReplaceableTextures\CommandButtons\BTNAll_RallyPoint.blp
+CommandMove=ReplaceableTextures\CommandButtons\BTNAll_MoveAlternate.blp
+
