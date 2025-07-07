@@ -1,0 +1,35 @@
+User Interface:
+
+
+UI\Console\*Race*\*Race*UITile01.blp
+UI\Console\*Race*\*Race*UITile02.blp
+UI\Console\*Race*\*Race*UITile03.blp
+UI\Console\*Race*\*Race*UITile04.blp
+UI\Console\*Race*\*Race*UITile-InventoryCover.blp
+UI\Console\*Race*\*Race*UITile-TimeIndicatorFrame.blp
+
+							*Race* = Human / NightElf / Orc / Undead
+		
+
+							
+Borders:
+
+
+UI\Widgets\EscMenu\*Race*\*Race*-options-menu-border.blp
+UI\Widgets\EscMenu\*Race*\*Race*-cinematic-border.blp
+									
+
+
+Small UI Buttons:
+
+
+UI\Widgets\Console\*Race*\*Race*-console-buttonstates2.blp
+									
+
+									
+Menu Background and Button Highlight:
+
+
+UI\Widgets\EscMenu\*Race*\*Race*-options-button-highlight.blp
+UI\Widgets\EscMenu\*Race*\*Race*-options-menu-background.blp
+
