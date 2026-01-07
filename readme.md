@@ -18,8 +18,6 @@ Download from GitHub: https://github.com/nastiolink/RagnarokLegacy/releases
 
 Support author:
 
-Donationalerts: https://www.donationalerts.com/r/nastiolink
-
 Ko-Fi: https://ko-fi.com/nastiolink
 
 Main commands
@@ -57,8 +55,6 @@ https://github.com/Ev3nt/MM-Engine
 Скачать релиз на GitHub: https://github.com/nastiolink/RagnarokLegacy/releases
 
 Поддержать автора:
-
-Donationalerts: https://www.donationalerts.com/r/nastiolink
 
 Ko-Fi: https://ko-fi.com/nastiolink
 
