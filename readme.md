@@ -16,10 +16,6 @@ Official site: https://sites.google.com/view/wcragnaroklegacy/Home
 
 Download from GitHub: https://github.com/nastiolink/RagnarokLegacy/releases
 
-Support author:
-
-Ko-Fi: https://ko-fi.com/nastiolink
-
 Main commands
 
 Camera
@@ -53,10 +49,6 @@ https://github.com/Ev3nt/MM-Engine
 Официальный сайт: https://sites.google.com/view/wcragnaroklegacy/Home
 
 Скачать релиз на GitHub: https://github.com/nastiolink/RagnarokLegacy/releases
-
-Поддержать автора:
-
-Ko-Fi: https://ko-fi.com/nastiolink
 
 Основные команды
 
