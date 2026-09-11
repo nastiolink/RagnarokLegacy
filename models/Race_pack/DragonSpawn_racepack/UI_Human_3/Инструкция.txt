@@ -1,7 +1,0 @@
-¬∑æ∂£®»À¿‡£©£∫
-UI\Console\Human\HumanUITile01.blp
-UI\Console\Human\HumanUITile02.blp
-UI\Console\Human\HumanUITile03.blp
-UI\Console\Human\HumanUITile04.blp
-UI\Console\Human\HumanUITile-InventoryCover.blp
-UI\Console\Human\HumanUITile-TimeIndicatorFrame.blp
