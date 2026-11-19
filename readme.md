@@ -95,7 +95,7 @@ Linux:
 Убедитесь в актуальности версии мода.
 Если нашли новый баг - сообщите об этом разработчику.
 
-ВК: https://vk.com/war3ragnarok
+ВК: https://vk.ru/ragnaroklegacy
 
 Telegram: https://t.me/wc3ragnaroklegacy
 
